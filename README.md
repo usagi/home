@@ -1,6 +1,6 @@
 # home
 
-## That's this
+## What's this
 
 Usagi Ito's public home files. It's include .zshrc, .vimrc, and some configuration files.
 
