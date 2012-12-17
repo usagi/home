@@ -6,9 +6,9 @@ Usagi Ito's public home files. It's include .zshrc, .vimrc, and some configurati
 
 ## Contacts
 
-Facebook : [usagi.wrp](https://www.facebook.com/usagi.wrp)
-Twitter  : [@USAGI_WRP](https://twitter.com/USAGI_WRP)
-E-Mail   : [Usagi Ito](mailto:usagi@WonderRabbitProject.net)
+* Facebook : [usagi.wrp](https://www.facebook.com/usagi.wrp)
+* Twitter  : [@USAGI_WRP](https://twitter.com/USAGI_WRP)
+* E-Mail   : [Usagi Ito](mailto:usagi@WonderRabbitProject.net)
 
 ## License
 
