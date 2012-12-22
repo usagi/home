@@ -190,6 +190,9 @@ alias umount="sudo umount"
 
 #alias g="egrep -nr"
 g(){ egrep -nr $1 | sort; }
+
+alc(){ if [ $# != 0 ]; then w3m "http://eow.alc.co.jp/$*/UTF-8/?ref=sa"; fi; }
+
 alias time++="/usr/bin/time --verbose"
 
 alias chmod-files="find . -type f -print | xargs chmod"
