@@ -2,6 +2,7 @@ export EDITOR=vim
 export PATH=$HOME/.cabal/bin:$HOME/opt/bin:$PATH
 #export PATH=$HOME/opt/git-tasukete:$PATH
 #opt/include
+export CMAKE_C_COMPILER=/usr/bin/gcc
 export CPLUS_INCLUDE_PATH=$HOME/opt/include:$CPLUS_INCLUDE_PATH
 #crystal space
 export CPLUS_INCLUDE_PATH=$HOME/opt/crystal_space/current/include:$CPLUS_INCLUDE_PATH
