@@ -107,15 +107,6 @@ set clipboard+=autoselect
 
 au QuickfixCmdPost make,grep,grepadd,vimgrep if len(getqflist()) != 0 | copen | endif
 
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-imap <C-i> <Plug>(neocomplcache_snippets_expand)
-smap <C-i> <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g> neocomplcache#undo_completion()
-inoremap <expr><C-l> neocomplcache#complete_common_string()
-imap <C-u> <C-n>
-imap <C-o> <C-p>
-
 "let g:vimfiler_as_default_explorer = 1
 "let g:vimfiler_safe_mode_by_default = 0
 
@@ -160,3 +151,11 @@ let g:quickrun_config['cpp'] = {
       \  'exec'    : ['%c -std=c++11 %o %s -o %s:p:r', '%s:p:r %a', 'rm -f %s:p:r'],
       \  'tempfile': '%{tempname()}.cpp'
       \ }
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+"imap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<C-Space>"
+"vmap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<C-Space>"
+
