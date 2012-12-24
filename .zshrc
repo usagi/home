@@ -150,7 +150,7 @@ alias opcontrol="sudo opcontrol"
 
 obs-search(){ if [ $# != 0 ]; then w3m "http://software.opensuse.org/search?q=$*"; fi; }
 alias yast="sudo su -c yast"
-alias zypper="sudo zypper"
+alias zypper="sudo zypper -v"
 alias rpm="sudo rpm"
 
 alias reboot="sudo reboot"
