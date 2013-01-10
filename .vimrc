@@ -37,7 +37,7 @@ set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v
 syntax on
 
 " dart
-au BufNewFile,BufRead *.dart setf dart
+"au BufNewFile,BufRead *.dart setf dart
 
 filetype on
 filetype plugin on
@@ -124,6 +124,9 @@ let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#433d3c
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#544a47
 
+"QML
+autocmd BufNewFile,BufRead *.qml set filetype=qml
+
 "errormaker.vim
 let g:errormarker_errortext="!!"
 let g:errormarker_warningtext="??"
@@ -159,3 +162,4 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 "imap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<C-Space>"
 "vmap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<C-Space>"
 
+map <C-a> ggVG

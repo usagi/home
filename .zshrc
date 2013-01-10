@@ -17,6 +17,8 @@ export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 #android NDK
 export ANDROIDNDK_HOME=/opt/android-ndk
 export PATH=$ANDROIDNDK_HOME:$PATH
+#QT
+export QML_IMPORT_TRACE=1
 
 autoload colors
 colors
@@ -210,10 +212,13 @@ alias @LH-SVR1="ssh LH-SVR1"
 alias @LH-SVR2="ssh LH-SVR2"
 alias @LH-SVR3="ssh LH-SVR3"
 alias @LH-SVR4="ssh LH-SVR4"
+alias @LH-SVR5="ssh LH-SVR5"
 alias @LH-MAIN="ssh LH-MAIN"
 alias @LH-LAB1="ssh LH-LAB1 -p 443"
 alias @LH-NB1="ssh LH-NB1"
 alias @xn--qiq2o.jp="ssh xn--qiq2o.jp"
 
 setopt multios
+
+xset r rate 168 48
 
