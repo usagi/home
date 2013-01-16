@@ -163,3 +163,7 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 "vmap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<C-Space>"
 
 map <C-a> ggVG
+map <F5> <esc>:!`find . -perm -u+x -type f`<cr>
+map <F6> <esc>:!make<cr>
+map <C-F6> <esc>:!make clean && make<cr>
+

@@ -221,4 +221,7 @@ alias @xn--qiq2o.jp="ssh xn--qiq2o.jp"
 setopt multios
 
 xset r rate 168 48
+xmodmap -e "keycode 100 = F5"
+xmodmap -e "keycode 102 = F6"
+xmodmap -e "keycode 133 = Escape"
 
