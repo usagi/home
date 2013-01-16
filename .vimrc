@@ -166,4 +166,8 @@ map <C-a> ggVG
 map <F5> <esc>:!`find . -perm -u+x -type f`<cr>
 map <F6> <esc>:!make<cr>
 map <C-F6> <esc>:!make clean && make<cr>
+imap <F5> <esc><F5>
+imap <F6> <esc><F6>
+imap <C-F6> <esc><C-F6>
+
 
