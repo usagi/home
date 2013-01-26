@@ -36,17 +36,14 @@ set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v
 
 syntax on
 
-" dart
-"au BufNewFile,BufRead *.dart setf dart
-
 filetype on
 filetype plugin on
 filetype indent off
 
 syntax enable
 
-let $BOOST_ROOT = "~/development/includes/boost"
-set path+=$BOOST_ROOT
+let $USER_OPT_INCLUDE = "/home/usagi/opt/include"
+set path+=$USER_OPT_INCLUDE
 
 call pathogen#runtime_append_all_bundles()
 
@@ -156,18 +153,34 @@ let g:quickrun_config['cpp'] = {
       \ }
 
 " neocomplcache
+let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 2
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 "imap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<C-Space>"
 "vmap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<C-Space>"
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
-map <C-a> ggVG
-map <F5> <esc>:!`find . -perm -u+x -type f`<cr>
-map <F6> <esc>:!make<cr>
-map <C-F6> <esc>:!make clean && make<cr>
+nmap <C-a> ggVG
+nmap <F5> :!`find . -perm -u+x -type f`<cr>
+nmap <F6> :!test -f Makefile && make \|\| test -f build.ninja && ninja<cr>
+nmap <C-F6> :!test -f Makefile && make clean && make \|\| test -f build.ninja && ninja -t clean<cr>
+nmap <S-F6> <C-F6><F6>
 imap <F5> <esc><F5>
 imap <F6> <esc><F6>
 imap <C-F6> <esc><C-F6>
 
+nmap <F2> gf
 
