@@ -1,0 +1,12 @@
+noremap <C-a> <Insert><C-a><Insert>
+inoremap <C-a> <Insert><C-a><Insert>
+set hintchars=abcdefghijklmnopqrstuvwxyz
+map <S-Left> <C-PageUp>
+map <S-Right> <C-PageDown>
+map <C-S-Left> :tabmove! -1<cr>
+map <C-S-Right> :tabmove! -1<cr>
+map <C-k> <C-u>
+map <C-j> <C-d>
+map <C-S-k> <C-b>
+map <C-S-j> <C-f>
+
