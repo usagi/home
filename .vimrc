@@ -40,6 +40,8 @@ filetype on
 filetype plugin on
 filetype indent off
 
+let c_no_curly_error=0
+
 let $USER_OPT_INCLUDE = "/home/usagi/opt/include"
 set path+=$USER_OPT_INCLUDE
 
@@ -51,6 +53,9 @@ call pathogen#runtime_append_all_bundles()
 " Haskell-mode
 au Bufenter *.hs compiler ghc
 let g:haddock_browser = "w3m"
+
+" GLSL
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 
 " find & center
 nmap n nzz
@@ -172,13 +177,13 @@ endif
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 nmap <C-a> ggVG
+
 nmap <F5> :!`find . -perm -u+x -type f`<cr>
+nmap <S-F5> <S-F6><F5>
+
 nmap <F6> :!test -f Makefile && make \|\| test -f build.ninja && ninja<cr>
 nmap <C-F6> :!test -f Makefile && make clean && make \|\| test -f build.ninja && ninja -t clean<cr>
 nmap <S-F6> <C-F6><F6>
-imap <F5> <esc><F5>
-imap <F6> <esc><F6>
-imap <C-F6> <esc><C-F6>
 
 nmap <F2> gf
 

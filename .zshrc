@@ -5,19 +5,25 @@ export PATH=$HOME/.cabal/bin:$HOME/opt/bin:$PATH
 #opt/include
 export CMAKE_C_COMPILER=/usr/bin/gcc
 export CPLUS_INCLUDE_PATH=$HOME/opt/include:$CPLUS_INCLUDE_PATH
+
 #crystal space
-export CPLUS_INCLUDE_PATH=$HOME/opt/crystal_space/current/include:$CPLUS_INCLUDE_PATH
-export LD_LIBRARY_PATH=$HOME/opt/crystal_space/current:$LD_LIBRARY_PATH
+#export CPLUS_INCLUDE_PATH=$HOME/opt/crystal_space/current/include:$CPLUS_INCLUDE_PATH
+#export LD_LIBRARY_PATH=$HOME/opt/crystal_space/current:$LD_LIBRARY_PATH
+
 #export BOOST_ROOT=/usr
 #export SKKSERVER=localhost
+
 #native client
 export NACL_SDK_ROOT=$HOME/opt/nacl_sdk/pepper_target/
+
 #android SDK
 export ANDROID_HOME=$HOME/opt/android/sdk
 export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
+
 #android NDK
 export ANDROIDNDK_HOME=/opt/android-ndk
 export PATH=$ANDROIDNDK_HOME:$PATH
+
 #QT
 export QML_IMPORT_TRACE=1
 
@@ -206,7 +212,7 @@ alias chmod-directories="find . -type d -print | xargs chmod"
 alias date="date --iso-8601=minutes"
 alias psegrep="ps ax | egrep"
 
-alias :e="qvim"
+alias :e="gvim"
 alias :q="exit"
 
 alias @LH-SVR1="ssh LH-SVR1"
@@ -221,8 +227,10 @@ alias @xn--qiq2o.jp="ssh xn--qiq2o.jp"
 
 setopt multios
 
-xset r rate 168 48
+#xset r rate 168 48
 xmodmap -e "keycode 100 = F5"
 xmodmap -e "keycode 102 = F6"
-xmodmap -e "keycode 133 = Escape"
+#xmodmap -e "keycode 133 = Escape"
+xmodmap -e "keycode 49 = Escape"
+xmodmap -e "keycode 101= Zenkaku_Hankaku"
 
