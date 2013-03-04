@@ -138,13 +138,18 @@ alias git="nocorrect git"
 alias ghc-3="ghc -threaded -O3"
 alias ghc-dph="ghc -threaded -Odph -fllvm -optlo-O3"
 
-alias g++0x="g++ --std=c++0x"
-alias g++11="g++ --std=c++11"
-alias g++11-4.8="g++-4.8 --std=c++11"
+alias g++="g++ -Wall -pedantic-errors"
+alias g++0x="g++ --std=c++0x -Wall -pedantic-errors"
+alias g++11="g++ -std=c++11 -Wall -pedantic-errors"
+alias g++11-4.8="g++-4.8 -std=c++11 -Wall -pedantic-errors"
 
-alias clang++11="clang++ --std=c++11"
+alias clang++="clang++ -Wall -pedantic-errors"
+alias clang++11="clang++ --std=c++11 -Wall -pedantic-errors"
 
 alias opcontrol="sudo opcontrol"
+
+alias apt="sudo apt"
+alias apt-get="sudo apt-get"
 
 #alias pacman="sudo pacman-color"
 #alias pnc="pacman -S --noconfirm"
@@ -209,7 +214,8 @@ alias time++="/usr/bin/time --verbose"
 alias chmod-files="find . -type f -print | xargs chmod"
 alias chmod-directories="find . -type d -print | xargs chmod"
 
-alias date="date --iso-8601=minutes"
+alias date-minutes="date --iso-8601=minutes"
+alias date-date="date --iso-8601=date"
 alias psegrep="ps ax | egrep"
 
 alias :e="gvim"
