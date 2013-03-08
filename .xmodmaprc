@@ -1,0 +1,12 @@
+!xset r rate 168 48
+
+keycode 100 = F5
+keycode 102 = F6
+
+!xmodmap -e "keycode 133 = Escape
+keycode  49 = Escape
+keycode 101 = Zenkaku_Hankaku
+
+remove Lcok = Caps_Lock
+keysym Caps_Lock = Escape
+
