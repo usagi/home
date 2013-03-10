@@ -231,5 +231,8 @@ alias @LH-LAB1="ssh LH-LAB1 -p 443"
 alias @LH-NB1="ssh LH-NB1"
 alias @xn--qiq2o.jp="ssh xn--qiq2o.jp"
 
+xmodmap -e "remove Lock = Caps_Lock" 2> /dev/null 1> /dev/null
+xmodmap $HOME/.xmodmaprc > /dev/null
+
 setopt multios
 

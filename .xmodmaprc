@@ -7,6 +7,7 @@ keycode 102 = F6
 keycode  49 = Escape
 keycode 101 = Zenkaku_Hankaku
 
-remove Lcok = Caps_Lock
-keysym Caps_Lock = Escape
+!remove Lcok = Caps_Lock
+!keysym Caps_Lock = Zenkaku_Hankaku
+keycode  66 = Zenkaku_Hankaku
 
