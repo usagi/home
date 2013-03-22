@@ -151,6 +151,11 @@ alias opcontrol="sudo opcontrol"
 alias apt="sudo apt"
 alias apt-get="sudo apt-get"
 
+alias _search="apt-cache search"
+alias _install="sudo apt-get install"
+alias _update="sudo apt-get update"
+alias _upgrade="sudo apt-get upgrade"
+
 #alias pacman="sudo pacman-color"
 #alias pnc="pacman -S --noconfirm"
 #alias pss="pacman -Ss"
