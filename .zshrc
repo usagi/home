@@ -148,13 +148,17 @@ alias clang++11="clang++ --std=c++11 -Wall -pedantic-errors"
 
 alias opcontrol="sudo opcontrol"
 
-alias apt="sudo apt"
-alias apt-get="sudo apt-get"
+if [ -f /etc/debian_version ]; then
+  alias apt="sudo apt"
+  alias apt-get="sudo apt-get"
+  
+  alias _search="apt-cache search"
+  alias _install="sudo apt-get install"
+  alias _update="sudo apt-get update"
+  alias _upgrade="sudo apt-get upgrade"
 
-alias _search="apt-cache search"
-alias _install="sudo apt-get install"
-alias _update="sudo apt-get update"
-alias _upgrade="sudo apt-get upgrade"
+  alias ack="ack-grep"
+fi
 
 #alias pacman="sudo pacman-color"
 #alias pnc="pacman -S --noconfirm"
@@ -213,6 +217,8 @@ alias umount="sudo umount"
 g(){ egrep -nr $1 | sort; }
 
 alc(){ if [ $# != 0 ]; then w3m "http://eow.alc.co.jp/$*/UTF-8/?ref=sa"; fi; }
+
+deb(){ if [ $# != 0 ]; then w3m "http://packages.debian.org/search?keywords=$*"; fi; }
 
 alias time++="/usr/bin/time --verbose"
 
