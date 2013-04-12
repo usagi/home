@@ -2,7 +2,8 @@
 "set guifont=VL\ ゴシック\ 16
 "set guifont=Ricty\ 18
 "set guifont=Liberation\ Mono\ 20
-set guifont=Courier\ 13
+"set guifont=Courier\ 13
+set guifont=きろ字\ 17
 
 "set lines=96
 "set columns=256
