@@ -1,8 +1,9 @@
 /*
 /.*
 
-!/.xmodmaprc
 !/.gitignore
+
+!/.xmodmaprc
 !/.zshrc
 !/.vimrc
 !/.gvimrc
@@ -14,4 +15,6 @@
 !/.vimperatorrc
 !/.Rprofile
 !/README.md
+
+!/opt
 
