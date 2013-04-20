@@ -147,6 +147,7 @@ map <bs> i<bs><esc>l
 
 "quickrun
 let g:quickrun_config = { }
+let g:quickrun_config.html = {'command': 'w3m'}
 let g:quickrun_config['javascript'] = { 'type': 'js', 'command': 'node' }
 let g:quickrun_config['cpp'] = {
       \  'type'    : 'cpp',
