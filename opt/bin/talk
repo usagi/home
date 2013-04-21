@@ -21,7 +21,7 @@ shift $(( $OPTIND - 1 ))
 
 phrase=$@
 
-if [ ! $phrase ]
+if [ ! "${phrase}" ]
 then
   error=2
 fi
@@ -56,7 +56,7 @@ fi
 
 cache_file=${cache_dir}/${phrase}.wav
 
-if ! test "${force}" != true -a -f $cache_file
+if ! test "${force}" != true -a -f "$cache_file"
 then
   
   cd ${voice_dir}/${voice}
@@ -87,11 +87,11 @@ then
   -jf 1.0 \
   -jl 1.0 \
   -x /var/lib/mecab/dic/open-jtalk/naist-jdic \
-  -ow $cache_file
+  -ow "${cache_file}"
 
 fi
 
 if [ ! $option_q ] 
 then
-  aplay --quiet ${cache_file}
+  aplay --quiet "${cache_file}"
 fi
