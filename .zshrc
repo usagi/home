@@ -203,6 +203,8 @@ alias gvim~="gvim ~"
 alias gvim.="gvim ."
 alias gvim..="gvim .."
 
+alias tidy="tidy -utf8 -i"
+
 alias doxygen-generate="doxygen -g && doxygen -w html header.html footer.html main.css"
 
 alias psgrep="sudo ps -ax | grep"

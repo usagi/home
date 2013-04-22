@@ -5,7 +5,7 @@ voice=nitech-jp-atr503-m001
 voice_dir=/usr/share/hts-voice
 sampling_frequency=16000
 
-while getopts "fqv:c:s:" flag
+while getopts "fqv:c:s:o:" flag
 do
   case $flag in
     \?) error=1; break;;
@@ -14,6 +14,7 @@ do
     v)  voice=$OPTARG ;;
     c)  cache_dir=$OPTARG ;;
     s)  sampling_frequency=$OPTARG ;;
+    o)  output=$OPTARG ;;
   esac
 done
 
@@ -43,6 +44,7 @@ then
   echo "
     -c : cache directory ( default: ~/.jtalk )
     -s : sampling frequency
+    -o : output file
 
   example: `basename $0` \"フジヤマ、ゲイシャ、ニンジャ！\"
 "
@@ -54,7 +56,12 @@ then
   mkdir $cache_dir
 fi
 
-cache_file=${cache_dir}/${phrase}.wav
+if test ${#output} -gt 0
+then
+  cache_file=${cache_dir}/${output}
+else
+  cache_file=${cache_dir}/${phrase}.wav
+fi
 
 if ! test "${force}" != true -a -f "$cache_file"
 then
