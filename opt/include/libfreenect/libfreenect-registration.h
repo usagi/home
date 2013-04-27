@@ -1,0 +1,1 @@
+/usr/include/libfreenect-registration.h

@@ -1,0 +1,1 @@
+/home/usagi/repos/libWRP-kinect/include/WonderRabbitProject/kinect.hpp
