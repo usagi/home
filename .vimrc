@@ -151,8 +151,8 @@ let g:quickrun_config.html = {'command': 'w3m'}
 let g:quickrun_config['javascript'] = { 'type': 'js', 'command': 'node' }
 let g:quickrun_config['cpp'] = {
       \  'type'    : 'cpp',
-      \  'command' : 'g++',
-      \  'exec'    : ['%c -std=c++11 -Wall -pedantic %o %s -o %s:p:r', '%s:p:r %a', 'rm -f %s:p:r'],
+      \  'command' : 'clang++',
+      \  'exec'    : ['%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r', '%s:p:r %a', 'rm -f %s:p:r'],
       \  'tempfile': '%{tempname()}.cpp'
       \ }
 
