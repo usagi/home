@@ -27,12 +27,18 @@ set nowrapscan
 set wildmode=longest:full,full
 set completeopt=menuone,preview
 
+" tab
+set stal=2
+"tab e
+
 " for Japanese Document
 set formatoptions+=mM
 set ambiwidth=double
 set display+=lastline
 set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
+
+execute pathogen#infect()
 
 syntax on
 
@@ -45,7 +51,7 @@ let c_no_curly_error=0
 let $USER_OPT_INCLUDE = "/home/usagi/opt/include"
 set path+=$USER_OPT_INCLUDE
 
-call pathogen#runtime_append_all_bundles()
+"let g:vim_markdown_folding_disabled=1
 
 " move to previous editing point
 "au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -90,8 +96,10 @@ map <F12> <C-c>
 " Pyclewn: exit
 map <S-F12> <S-q>
 
-nmap <S-Right> :bn<cr>
-nmap <S-Left> :bN<cr>
+"nmap <S-Right> :bn<cr>
+nmap <S-Right> :tabn<cr>
+"nmap <S-Left> :bN<cr>
+nmap <S-Left> :tabp<cr>
 
 nmap <S-Home> :sp<cr>
 nmap <S-End> :vs<cr>
@@ -127,6 +135,13 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#544a47
 "QML
 autocmd BufNewFile,BufRead *.qml set filetype=qml
 
+"Markdown
+autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
+augroup markdown
+let quickrun_no_quickfix = 1
+augroup END
+
+
 "errormaker.vim
 let g:errormarker_errortext="!!"
 let g:errormarker_warningtext="??"
@@ -147,14 +162,64 @@ map <bs> i<bs><esc>l
 
 "quickrun
 let g:quickrun_config = { }
-let g:quickrun_config.html = {'command': 'w3m'}
-let g:quickrun_config['javascript'] = { 'type': 'js', 'command': 'node' }
-let g:quickrun_config['cpp'] = {
-      \  'type'    : 'cpp',
-      \  'command' : 'clang++',
-      \  'exec'    : ['%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r', '%s:p:r %a', 'rm -f %s:p:r'],
-      \  'tempfile': '%{tempname()}.cpp'
-      \ }
+
+let g:quickrun_config['_'] =
+  \ { 'hook/time/enable' : '1'
+  \ }
+"  \ , 'runner' : 'vimproc'
+"  \ , 'runner/vimproc/updatetime' : 16
+"  \ , 'runmode': 'async:remote:vimproc'
+
+let g:quickrun_config['markdown'] =
+  \ { 'outputter' : 'browser'
+  \ }
+
+let g:quickrun_config['html'] = { 'type': 'html/w3m' }
+let g:quickrun_config['html/w3m']      = { 'command': 'w3m' }
+let g:quickrun_config['html/chromium'] = { 'command': 'chromium' }
+let g:quickrun_config['html/firefox']  = { 'command': 'firefox' }
+
+let g:quickrun_config['cpp'] = { 'type' : 'cpp/clang++' }
+let g:quickrun_config['cpp/clang++'] =
+  \ { 'command' : 'clang++'
+  \ , 'exec'    : [ '%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r'
+  \               , '%s:p:r %a'
+  \               , 'rm -f %s:p:r'
+  \               ]
+  \ , 'tempfile': '%{tempname()}.cpp'
+  \ }
+let g:quickrun_config['cpp/g++'] =
+  \ { 'command' : 'clang++'
+  \ , 'exec'    : [ '%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r'
+  \               , '%s:p:r %a'
+  \               , 'rm -f %s:p:r'
+  \               ]
+  \ , 'tempfile': '%{tempname()}.cpp'
+  \ }
+let g:quickrun_config['cpp/em++'] = { 'type' : 'cpp/em++/js' }
+let g:quickrun_config['cpp/em++/js'] =
+  \ { 'command' : 'em++'
+  \ , 'exec'    : [ '%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r.js'
+  \               , '%s:p:r.js %a'
+  \               , 'rm -f %s:p:r.js'
+  \               ]
+  \ , 'tempfile': '%{tempname()}.cpp'
+  \ }
+let g:quickrun_config['cpp/em++/html'] =
+  \ { 'command' : 'em++'
+  \ , 'exec'    : [ '%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r.html'
+  \               , '%s:p:r.html %a'
+  \               , 'rm -f %s:p:r.html'
+  \               ]
+  \ , 'tempfile': '%{tempname()}.cpp'
+  \ }
+
+let g:quickrun_config['cmake-build'] =
+  \ { 'command' : 'cmake'
+  \ , 'exec'    : '%c build'
+  \ }
+
+au BufNewFile,BufRead * if &ft!='markdown' | map <Leader>r :QuickRun -outputter error -outputter/error/success buffer -outputter/error quickfix<cr> | endif
 
 " neocomplcache
 let g:acp_enableAtStartup = 0
@@ -176,6 +241,11 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+" comment toggle
+imap <S-space> <esc><Plug>(caw:I:toggle)
+nmap <S-space> <Plug>(caw:I:toggle)
+vmap <S-space> <Plug>(caw:I:toggle)
 
 nmap <C-a> ggVG
 

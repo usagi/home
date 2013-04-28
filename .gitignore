@@ -17,5 +17,7 @@
 !/.Rprofile
 !/README.md
 
+!/.gconf/apps/gnome-terminal/profiles/Default
+
 !/opt
 
