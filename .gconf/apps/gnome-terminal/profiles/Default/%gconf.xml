@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="bold_color_same_as_fg" mtime="1367162209" type="bool" value="true"/>
+	<entry name="use_theme_colors" mtime="1367162011" type="bool" value="false"/>
+	<entry name="font" mtime="1367162011" type="string">
+		<stringvalue>きろ字 13</stringvalue>
+	</entry>
+	<entry name="use_system_font" mtime="1367162011" type="bool" value="false"/>
+	<entry name="title" mtime="1360932916" type="string">
+		<stringvalue>端末</stringvalue>
+	</entry>
+	<entry name="background_darkness" mtime="1367162057" type="float" value="0.76109933853149414"/>
+	<entry name="background_type" mtime="1367162011" type="string">
+		<stringvalue>transparent</stringvalue>
+	</entry>
+	<entry name="palette" mtime="1367162174" type="string">
+		<stringvalue>#000000000000:#FFFF97099709:#8A8AE2E23434:#FCFCE9E94F4F:#72729F9FCFCF:#ADAD7F7FA8A8:#72729F9FCFCF:#FAFAEBEBD7D7:#404040404040:#FFFF5EB75EB7:#8A8AE2E23434:#FCFCE9E94F4F:#72729F9FCFCF:#ADAD7F7FA8A8:#72729F9FCFCF:#FFFFFFFFFFFF</stringvalue>
+	</entry>
+	<entry name="alternate_screen_scroll" mtime="1367162011" type="bool" value="true"/>
+	<entry name="background_color" mtime="1367162011" type="string">
+		<stringvalue>#000000000000</stringvalue>
+	</entry>
+	<entry name="visible_name" mtime="1367162011" type="string">
+		<stringvalue>Default</stringvalue>
+	</entry>
+	<entry name="bold_color" mtime="1367162011" type="string">
+		<stringvalue>#000000000000</stringvalue>
+	</entry>
+	<entry name="foreground_color" mtime="1367162200" type="string">
+		<stringvalue>#BABABDBDB6B6</stringvalue>
+	</entry>
+</gconf>
