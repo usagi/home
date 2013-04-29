@@ -6,8 +6,8 @@
 		<stringvalue>きろ字 13</stringvalue>
 	</entry>
 	<entry name="use_system_font" mtime="1367162011" type="bool" value="false"/>
-	<entry name="title" mtime="1360932916" type="string">
-		<stringvalue>端末</stringvalue>
+	<entry name="title" mtime="1367162903" type="string">
+		<stringvalue>terminal</stringvalue>
 	</entry>
 	<entry name="background_darkness" mtime="1367162057" type="float" value="0.76109933853149414"/>
 	<entry name="background_type" mtime="1367162011" type="string">

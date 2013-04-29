@@ -131,7 +131,6 @@ alias df="df -h"
 
 alias screen="screen -U -O"
 
-alias gvim="nocorrect gvim"
 alias links="nocorrect links"
 alias git="nocorrect git"
 
@@ -195,14 +194,6 @@ alias mozc-dictionary="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
 alias mozc-config="/usr/lib/mozc/mozc_tool --mode=config_dialog"
 alias ntpdate-hwclock="sudo ntpdate 210.173.160.27 && sudo hwclock --systohc"
 
-alias vim~="vim ~"
-alias vim.="vim ."
-alias vim..="vim .."
-
-alias gvim~="gvim ~"
-alias gvim.="gvim ."
-alias gvim..="gvim .."
-
 alias tidy="tidy -utf8 -i"
 
 alias doxygen-generate="doxygen -g && doxygen -w html header.html footer.html main.css"
@@ -230,6 +221,9 @@ alias chmod-directories="find . -type d -print | xargs chmod"
 alias date-minutes="date --iso-8601=minutes"
 alias date-date="date --iso-8601=date"
 alias psegrep="ps ax | egrep"
+
+alias vim="vim -p"
+alias gvim="nocorrect gvim -p"
 
 alias :e="gvim"
 alias :q="exit"

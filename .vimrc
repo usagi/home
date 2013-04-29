@@ -29,7 +29,7 @@ set completeopt=menuone,preview
 
 " tab
 set stal=2
-"tab e
+
 
 " for Japanese Document
 set formatoptions+=mM
@@ -54,7 +54,7 @@ set path+=$USER_OPT_INCLUDE
 "let g:vim_markdown_folding_disabled=1
 
 " move to previous editing point
-"au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Haskell-mode
 au Bufenter *.hs compiler ghc
@@ -72,51 +72,51 @@ nmap g* g*zz
 nmap g# g#zz
 
 " Pyclewn: ON
-map <F2> <esc>:Pyclewn<cr> :Cfile main<cr> :Cmapkeys<cr>
+"map <F2> <esc>:Pyclewn<cr> :Cfile main<cr> :Cmapkeys<cr>
 " Pyclewn: (re)-load executable
-map <S-F2> <esc>:Cfile main<cr>
+"map <S-F2> <esc>:Cfile main<cr>
 " Pyclewn: Run
-map <F5> <esc>:Crun<cr>
+"map <F5> <esc>:Crun<cr>
 " Pyclewn: add debug variable
-map <F8> <esc>:Cdbgvar 
+"map <F8> <esc>:Cdbgvar 
 " Pyclewn: delete debug variable
-map <S-F8> <esc>:Cdelvar 
+"map <S-F8> <esc>:Cdelvar 
 " Pyclewn: set Break-point
-map <F9> <C-b>
+"map <F9> <C-b>
 " Pyclewn: unset Break-point
-map <S-F9> <C-e>
+"map <S-F9> <C-e>
 " Pyclewn: Step
-map <F10> <C-n>
+"map <F10> <C-n>
 " Pyclewn: Step in to the internal
-map <F11> <S-s>
+"map <F11> <S-s>
 " Pyclewn: Step out from the scope
-map <S-F11> <S-f>
+"map <S-F11> <S-f>
 " Pyclewn: to the Next break-point
-map <F12> <C-c>
+"map <F12> <C-c>
 " Pyclewn: exit
-map <S-F12> <S-q>
+"map <S-F12> <S-q>
 
-"nmap <S-Right> :bn<cr>
-nmap <S-Right> :tabn<cr>
-"nmap <S-Left> :bN<cr>
-nmap <S-Left> :tabp<cr>
 
-nmap <S-Home> :sp<cr>
-nmap <S-End> :vs<cr>
+" inter-buffer move
+nnoremap <C-S-Left> :bn<cr>
+nnoremap <C-S-Right> :bN<cr>
+" inter-tab move
+nnoremap <S-Left> :tabn<cr>
+nnoremap <S-Right> :tabp<cr>
+
+nnoremap <S-Home> :sp<cr>
+nnoremap <S-End> :vs<cr>
 nmap <S-PageUp> <C-w>w
 nmap <S-PageDown> <C-w>W
 
 " Gundo
-nmap <S-u> :GundoToggle<cr>
+nnoremap <S-u> :GundoToggle<cr>
 
 nnoremap <esc><esc> :nohlsearch<cr>
 
 set clipboard+=autoselect
 
 au QuickfixCmdPost make,grep,grepadd,vimgrep if len(getqflist()) != 0 | copen | endif
-
-"let g:vimfiler_as_default_explorer = 1
-"let g:vimfiler_safe_mode_by_default = 0
 
 set gfm=%f:%l:%m,%f:%l:%m,%f\ \ %l%m,%f
 set gp=grep\ -nh
@@ -256,5 +256,5 @@ nmap <F6> :!test -f Makefile && make \|\| test -f build.ninja && ninja<cr>
 nmap <C-F6> :!test -f Makefile && make clean && make \|\| test -f build.ninja && ninja -t clean<cr>
 nmap <S-F6> <C-F6><F6>
 
-nmap <F2> gf
+nmap <F2> <C-w>gf
 
