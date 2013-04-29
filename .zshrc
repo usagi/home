@@ -238,6 +238,10 @@ alias @LH-LAB1="ssh LH-LAB1 -p 443"
 alias @LH-NB1="ssh LH-NB1"
 alias @xn--qiq2o.jp="ssh xn--qiq2o.jp"
 
+alias cninja="cmake -G Ninja"
+alias cninja-debug="cmake -G Ninja -DCMAKE_BUILD_TYPE=debug"
+alias cninja-release="cmake -G Ninja -DCMAKE_BUILD_TYPE=release"
+
 xmodmap -e "remove Lock = Caps_Lock" 2> /dev/null 1> /dev/null
 xmodmap $HOME/.xmodmaprc > /dev/null
 

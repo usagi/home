@@ -101,8 +101,8 @@ nmap g# g#zz
 nnoremap <C-S-Left> :bn<cr>
 nnoremap <C-S-Right> :bN<cr>
 " inter-tab move
-nnoremap <S-Left> :tabn<cr>
-nnoremap <S-Right> :tabp<cr>
+nnoremap <S-Left> :tabp<cr>
+nnoremap <S-Right> :tabn<cr>
 
 nnoremap <S-Home> :sp<cr>
 nnoremap <S-End> :vs<cr>
@@ -165,10 +165,9 @@ let g:quickrun_config = { }
 
 let g:quickrun_config['_'] =
   \ { 'hook/time/enable' : '1'
+  \ , 'runner' : 'vimproc'
+  \ , 'runner/vimproc/updatetime' : 16
   \ }
-"  \ , 'runner' : 'vimproc'
-"  \ , 'runner/vimproc/updatetime' : 16
-"  \ , 'runmode': 'async:remote:vimproc'
 
 let g:quickrun_config['markdown'] =
   \ { 'outputter' : 'browser'
@@ -219,7 +218,7 @@ let g:quickrun_config['cmake-build'] =
   \ , 'exec'    : '%c build'
   \ }
 
-au BufNewFile,BufRead * if &ft!='markdown' | map <Leader>r :QuickRun -outputter error -outputter/error/success buffer -outputter/error quickfix<cr> | endif
+"au BufNewFile,BufRead * if &ft!='markdown' | map <Leader>r :QuickRun -outputter error -outputter/error/success buffer -outputter/error quickfix<cr> | endif
 
 " neocomplcache
 let g:acp_enableAtStartup = 0
