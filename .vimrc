@@ -101,8 +101,8 @@ nmap g# g#zz
 nnoremap <C-S-Left> :bn<cr>
 nnoremap <C-S-Right> :bN<cr>
 " inter-tab move
-nnoremap <S-Left> :tabp<cr>
-nnoremap <S-Right> :tabn<cr>
+nnoremap <S-Left> gT
+nnoremap <S-Right> gt
 
 nnoremap <S-Home> :sp<cr>
 nnoremap <S-End> :vs<cr>
@@ -171,6 +171,12 @@ let g:quickrun_config['_'] =
 
 let g:quickrun_config['markdown'] =
   \ { 'outputter' : 'browser'
+  \ , 'type': 'markdown/pandoc'
+  \ }
+
+let g:quickrun_config['markdown/pandoc'] =
+  \ { 'command': 'pandoc'
+  \ , 'exec': '%c --from=markdown_phpextra --to=html5 %o %s %a'
   \ }
 
 let g:quickrun_config['html'] = { 'type': 'html/w3m' }
