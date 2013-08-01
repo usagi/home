@@ -3,6 +3,7 @@
 
 !/.gitignore
 
+!/git-submodule-pull
 !/git-pull-subdirs
 !/talk
 
