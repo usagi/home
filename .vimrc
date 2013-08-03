@@ -61,7 +61,6 @@ au Bufenter *.hs compiler ghc
 let g:haddock_browser = "w3m"
 
 " typescript
-au Bufenter *.ts compiler tsc
 au Bufenter *.ts setf typescript
 
 " GLSL
