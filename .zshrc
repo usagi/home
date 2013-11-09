@@ -6,6 +6,8 @@ export PATH=$HOME/.cabal/bin:$HOME/opt/bin:$PATH
 export CMAKE_C_COMPILER=/usr/bin/gcc
 export CPLUS_INCLUDE_PATH=$HOME/opt/include:$CPLUS_INCLUDE_PATH
 
+export TERM=xterm-256color
+
 #crystal space
 #export CPLUS_INCLUDE_PATH=$HOME/opt/crystal_space/current/include:$CPLUS_INCLUDE_PATH
 #export LD_LIBRARY_PATH=$HOME/opt/crystal_space/current:$LD_LIBRARY_PATH
