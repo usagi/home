@@ -26,6 +26,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 set nowrapscan
 set wildmode=longest:full,full
 set completeopt=menuone,preview
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 " tab
 set stal=2
@@ -300,3 +302,4 @@ nmap <S-F6> <C-F6><F6>
 
 nmap <F2> <C-w>gf
 
+set whichwrap=b,s,<,>,[,]
