@@ -1,0 +1,10 @@
+[user]
+	email = usagi@WonderRabbitProject.net
+	name = Usagi Ito
+[push]
+	default = simple
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
+
