@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 colorscheme desert
 
 set runtimepath+=~/.vim
@@ -35,7 +38,7 @@ set stal=2
 
 " for Japanese Document
 set formatoptions+=mM
-set ambiwidth=double
+"set ambiwidth=double
 set display+=lastline
 set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
