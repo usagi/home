@@ -192,6 +192,11 @@ alias gpasswd="sudo gpasswd"
 alias adduser="sudo adduser"
 alias usermod="sudo usermod"
 
+alias tar._="tar xvf"
+alias tar.xz="tar Jcvf"
+alias tar.bz2="tar jcvf"
+alias tar.gz="tar zcvf"
+
 alias mozc-dictionary="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
 alias mozc-config="/usr/lib/mozc/mozc_tool --mode=config_dialog"
 alias ntpdate-hwclock="sudo ntpdate 210.173.160.27 && sudo hwclock --systohc"
