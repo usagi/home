@@ -2,8 +2,8 @@ export EDITOR=vim
 export PATH=/sbin:/usr/sbin:/usr/local/sbin:$PATH
 export PATH=$HOME/.cabal/bin:$HOME/opt/bin:$PATH
 #export PATH=$HOME/opt/git-tasukete:$PATH
+
 #opt/include
-export CMAKE_C_COMPILER=/usr/bin/gcc
 export CPLUS_INCLUDE_PATH=$HOME/opt/include:$CPLUS_INCLUDE_PATH
 
 export TERM=xterm-256color
