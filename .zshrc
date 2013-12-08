@@ -154,11 +154,13 @@ if [ -f /etc/debian_version ]; then
   alias apt-get="sudo apt-get"
   
   alias _search="apt-cache search"
+  alias _info="sudo apt-cache show"
   alias _install="sudo apt-get install"
   alias _update="sudo apt-get update"
   alias _upgrade="sudo apt-get upgrade"
 
   alias ack="ack-grep"
+  alias chromium="chromium-browser"
 fi
 
 #alias pacman="sudo pacman-color"
