@@ -184,7 +184,7 @@ alias shutdown="sudo shutdown"
 
 alias reload="source ~/.zshrc"
 
-alias w3m-google="w3m http://www.google.co.jp"
+alias w3m.google="w3m http://www.google.co.jp"
 
 alias rc.d="sudo rc.d"
 
@@ -199,13 +199,13 @@ alias tar.xz="tar Jcvf"
 alias tar.bz2="tar jcvf"
 alias tar.gz="tar zcvf"
 
-alias mozc-dictionary="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
-alias mozc-config="/usr/lib/mozc/mozc_tool --mode=config_dialog"
+alias mozc.dictionary="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
+alias mozc.config="/usr/lib/mozc/mozc_tool --mode=config_dialog"
 alias ntpdate-hwclock="sudo ntpdate 210.173.160.27 && sudo hwclock --systohc"
 
 alias tidy="tidy -utf8 -i"
 
-alias doxygen-generate="doxygen -g && doxygen -w html header.html footer.html main.css"
+alias doxygen.generate="doxygen -g && doxygen -w html header.html footer.html main.css"
 
 alias psgrep="sudo ps -ax | grep"
 alias pspercol="sudo ps -ax | percol"
@@ -224,11 +224,11 @@ deb(){ if [ $# != 0 ]; then w3m "http://packages.debian.org/search?keywords=$*";
 
 alias time++="/usr/bin/time --verbose"
 
-alias chmod-files="find . -type f -print | xargs chmod"
-alias chmod-directories="find . -type d -print | xargs chmod"
+alias chmod.files="find . -type f -print | xargs chmod"
+alias chmod.directories="find . -type d -print | xargs chmod"
 
-alias date-minutes="date --iso-8601=minutes"
-alias date-date="date --iso-8601=date"
+alias date.minutes="date --iso-8601=minutes"
+alias date.date="date --iso-8601=date"
 alias psegrep="ps ax | egrep"
 
 alias vim="vim -p"
@@ -248,10 +248,10 @@ alias @LH-NB1="ssh LH-NB1"
 alias @xn--qiq2o.jp="ssh xn--qiq2o.jp"
 
 alias cninja="cmake -G Ninja"
-alias cninja-debug="cmake -G Ninja -DCMAKE_BUILD_TYPE=debug"
-alias cninja-release="cmake -G Ninja -DCMAKE_BUILD_TYPE=release"
+alias cninja.debug="cmake -G Ninja -DCMAKE_BUILD_TYPE=debug"
+alias cninja.release="cmake -G Ninja -DCMAKE_BUILD_TYPE=release"
 
-alias push-home="pushd ~ && git commit -am ':)' && git push && popd"
+alias push.home="pushd ~ && git commit -am ':)' && git push && popd"
 
 #xmodmap -e "remove Lock = Caps_Lock" 2> /dev/null 1> /dev/null
 #xmodmap $HOME/.xmodmaprc > /dev/null
