@@ -28,6 +28,10 @@ export PATH=$ANDROIDNDK_HOME:$PATH
 
 #QT
 export QML_IMPORT_TRACE=1
+export QML2_IMPORT_PATH=import
+
+export CXX_FLAGS_RELEASE="-std=c++11 -O3 -arch=native -Wall -pedantic-errors"
+export CXX_FLAGS_DEBUG="-std=c++11 -O0 -g -Wall -pedantic-errors"
 
 autoload colors
 colors
@@ -41,7 +45,6 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 export LANG=ja_JP.UTF-8
-#export LANG=en_US.UTF-8
 #export LANG=C
 
 case ${UID} in
@@ -133,34 +136,41 @@ alias df="df -h"
 
 alias screen="screen -U -O"
 
-alias links="nocorrect links"
-alias git="nocorrect git"
+#alias links="nocorrect links"
+#alias git="nocorrect git"
 
-alias ghc-3="ghc -threaded -O3"
-alias ghc-dph="ghc -threaded -Odph -fllvm -optlo-O3"
+#alias ghc-3="ghc -threaded -O3"
+#alias ghc-dph="ghc -threaded -Odph -fllvm -optlo-O3"
 
-alias g++="g++ -Wall -pedantic-errors"
-alias g++0x="g++ --std=c++0x -Wall -pedantic-errors"
-alias g++11="g++ -std=c++11 -Wall -pedantic-errors"
-alias g++11-4.8="g++-4.8 -std=c++11 -Wall -pedantic-errors"
+alias c++="c++ $CXX_FLAGS_RELEASE"
+alias c++.debug="c++ $CXX_FLAGS_DEBUG"
+alias c++0x="c++ $CXX_FLAGS_RELEASE --std=c++0x"
+alias c++0x.debug="c++ $CXX_FLAGS_DEBUG --std=c++0x"
+alias c++11="c++ $CXX_FLAGS_RELEASE -std=c++11"
+alias c++11.debug="c++ $CXX_FLAGS_DEBUG -std=c++11"
+alias c++14="c++ $CXX_FLAGS_RELEASE -std=c++14"
+alias c++14.debug="c++ $CXX_FLAGS_DEBUG -std=c++14 "
 
-alias clang++="clang++ -Wall -pedantic-errors"
-alias clang++11="clang++ --std=c++11 -Wall -pedantic-errors"
+alias g++="g++ $CXX_FLAGS_RELEASE"
+alias g++.debug="g++ $CXX_FLAGS_RELEASE"
+alias g++0x="g++ $CXX_FLAGS_RELEASE --std=c++0x"
+alias g++0x.debug="g++ $CXX_FLAGS_DEBUG --std=c++0x"
+alias g++11="g++ $CXX_FLAGS_RELEASE -std=c++11"
+alias g++11.debug="g++ $CXX_FLAGS_DEBUG -std=c++11"
+
+alias clang++="clang++ $CXX_FLAGS_RELEASE"
+alias clang++.debug="clang++ $CXX_FLAGS_DEBUG"
+alias clang++11="clang++ $CXX_FLAGS_RELEASE --std=c++11"
+alias clang++11.debug="clang++ $CXX_FLAGS_DEBUG --std=c++11"
 
 alias opcontrol="sudo opcontrol"
 
 if [ -f /etc/debian_version ]; then
   alias apt="sudo apt"
   alias apt-get="sudo apt-get"
-  
-  alias _search="apt-cache search"
-  alias _info="sudo apt-cache show"
-  alias _install="sudo apt-get install"
-  alias _update="sudo apt-get update"
-  alias _upgrade="sudo apt-get upgrade"
-
   alias ack="ack-grep"
   alias chromium="chromium-browser"
+  alias chrome="google-chrome"
 fi
 
 #alias pacman="sudo pacman-color"
@@ -178,9 +188,11 @@ obs-search(){ if [ $# != 0 ]; then w3m "http://software.opensuse.org/search?q=$*
 alias yast="sudo su -c yast"
 alias zypper="sudo zypper -v"
 alias rpm="sudo rpm"
+alias emerge="sudo emerge"
 
 alias reboot="sudo reboot"
 alias shutdown="sudo shutdown"
+alias halt="sudo halt"
 
 alias reload="source ~/.zshrc"
 
@@ -211,6 +223,7 @@ alias psgrep="sudo ps -ax | grep"
 alias pspercol="sudo ps -ax | percol"
 
 alias kill="sudo kill"
+alias pkill="sudo pkill"
 
 alias mount="sudo mount"
 alias umount="sudo umount"
