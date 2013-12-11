@@ -1,0 +1,1 @@
+alias emerge="sudo emerge"
