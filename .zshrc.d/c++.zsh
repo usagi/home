@@ -2,7 +2,7 @@
 export CPLUS_INCLUDE_PATH=$HOME/opt/include:$CPLUS_INCLUDE_PATH
 
 # compile options
-export CXX_FLAGS_RELEASE="-std=c++11 -O3 -arch=native -Wall -pedantic-errors"
+export CXX_FLAGS_RELEASE="-std=c++11 -O3 -march=native -Wall -pedantic-errors"
 export CXX_FLAGS_DEBUG="-std=c++11 -O0 -g -Wall -pedantic-errors"
 
 # c++ aliases
