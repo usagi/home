@@ -1,3 +1,4 @@
+set runtimepath+=~/.vim
 runtime! ../.vimrc.d/*.vim
 
 scriptencoding utf-8
@@ -5,7 +6,6 @@ set encoding=utf-8
 
 colorscheme desert
 
-set runtimepath+=~/.vim
 set hlsearch
 set autoindent
 "set cindent
