@@ -66,8 +66,10 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'errormarker.vim'
-NeoBundle "osyo-manga/vim-precious"
-NeoBundle "Shougo/context_filetype.vim"
+NeoBundle 'osyo-manga/vim-precious'
+NeoBundle 'Shougo/context_filetype.vim'
+NeoBundle 'vim-jp/cpp-vim'
+NeoBundle 'Valloric/YouCompleteMe'
 
 " lightline
 let g:lightline = {
@@ -137,7 +139,6 @@ nmap g# g#zz
 "map <F12> <C-c>
 " Pyclewn: exit
 "map <S-F12> <S-q>
-
 
 " inter-buffer move
 nnoremap <C-S-Left> :bn<cr>
@@ -267,27 +268,6 @@ let g:quickrun_config['cmake-build'] =
   \ }
 
 "au BufNewFile,BufRead * if &ft!='markdown' | map <Leader>r :QuickRun -outputter error -outputter/error/success buffer -outputter/error quickfix<cr> | endif
-
-" neocomplcache
-let g:acp_enableAtStartup = 0
-"let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 2
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-"imap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<C-Space>"
-"vmap <expr><C-Space> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<C-Space>"
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " comment toggle
 imap <S-space> <esc><Plug>(caw:I:toggle)
