@@ -1,6 +1,6 @@
 alias reload="source ~/.zshrc"
 
-alias :e="gvim"
+alias :e=$EDITOR
 alias :q="exit"
 
 alias /="ack"
