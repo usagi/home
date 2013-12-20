@@ -1,0 +1,8 @@
+(pingus-config 
+  (renderer "opengl")
+  (fullscreen-resolution 1920 1080)
+  (mouse-grab #f)
+  (print-fps #f)
+  (language "en")
+  (software-cursor #t)
+  (drag-drop-scrolling #t))

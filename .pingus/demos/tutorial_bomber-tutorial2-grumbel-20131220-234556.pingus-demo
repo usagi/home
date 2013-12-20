@@ -1,0 +1,10 @@
+(level 
+  (name "tutorial/bomber-tutorial2-grumbel")
+  (checksum "-3097143751083794265"))
+(pingu-action (time 620) (id 1) (raw-x "00e02244") (raw-y "0000da43") (action "bomber"))
+(pingu-action (time 785) (id 2) (raw-x "00e03244") (raw-y "0080d943") (action "bomber"))
+(pingu-action (time 929) (id 0) (raw-x "00e04844") (raw-y "0080d943") (action "bomber"))
+(pingu-action (time 1278) (id 3) (raw-x "00e04644") (raw-y "00c00a44") (action "bomber"))
+(pingu-action (time 2047) (id 6) (raw-x "00603944") (raw-y "00402344") (action "bomber"))
+(pingu-action (time 2278) (id 10) (raw-x "00206744") (raw-y "00403e44") (action "bomber"))
+(end (time 4221))

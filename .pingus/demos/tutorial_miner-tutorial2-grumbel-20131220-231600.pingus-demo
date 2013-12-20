@@ -1,0 +1,8 @@
+(level 
+  (name "tutorial/miner-tutorial2-grumbel")
+  (checksum "-6394073678458213997"))
+(pingu-action (time 310) (id 0) (raw-x "00404b44") (raw-y "0000b343") (action "miner"))
+(pingu-action (time 1205) (id 2) (raw-x "00e08644") (raw-y "00002444") (action "miner"))
+(pingu-action (time 1984) (id 4) (raw-x "00408e44") (raw-y "00806f44") (action "miner"))
+(armageddon (time 3018))
+(end (time 3187))

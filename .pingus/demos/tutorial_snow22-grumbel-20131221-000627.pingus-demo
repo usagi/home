@@ -1,0 +1,13 @@
+(level 
+  (name "tutorial/snow22-grumbel")
+  (checksum "3888623111304376410"))
+(pingu-action (time 215) (id 0) (raw-x "00c01e44") (raw-y "00808443") (action "miner"))
+(pingu-action (time 224) (id 0) (raw-x "00401f44") (raw-y "00808543") (action "miner"))
+(pingu-action (time 231) (id 0) (raw-x "00c01f44") (raw-y "00808643") (action "miner"))
+(pingu-action (time 587) (id 1) (raw-x "00400744") (raw-y "00808543") (action "blocker"))
+(pingu-action (time 949) (id 0) (raw-x "00c05244") (raw-y "00c00a44") (action "blocker"))
+(pingu-action (time 1413) (id 4) (raw-x "00000044") (raw-y "00c02744") (action "blocker"))
+(pingu-action (time 1782) (id 2) (raw-x "00804e44") (raw-y "00802744") (action "blocker"))
+(pingu-action (time 4644) (id 13) (raw-x "00803144") (raw-y "00802744") (action "miner"))
+(armageddon (time 5583))
+(end (time 5752))

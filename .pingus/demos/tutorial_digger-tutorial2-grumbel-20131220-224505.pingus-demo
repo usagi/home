@@ -1,0 +1,11 @@
+(level 
+  (name "tutorial/digger-tutorial2-grumbel")
+  (checksum "5925901498541591594"))
+(pingu-action (time 449) (id 0) (raw-x "00208844") (raw-y "00c01e44") (action "digger"))
+(pingu-action (time 569) (id 1) (raw-x "00408444") (raw-y "00801e44") (action "digger"))
+(pingu-action (time 687) (id 2) (raw-x "00208044") (raw-y "00801e44") (action "digger"))
+(pingu-action (time 807) (id 3) (raw-x "00807844") (raw-y "00001f44") (action "digger"))
+(pingu-action (time 923) (id 4) (raw-x "00c06f44") (raw-y "00c01e44") (action "digger"))
+(pingu-action (time 1064) (id 5) (raw-x "00806b44") (raw-y "00801f44") (action "digger"))
+(pingu-action (time 1344) (id 7) (raw-x "00c06744") (raw-y "00001f44") (action "digger"))
+(end (time 1994))
