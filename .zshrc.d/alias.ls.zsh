@@ -1,4 +1,2 @@
-alias ls="ls -lah --color=auto"
-alias la="ls -la"
-alias lf="ls -Fa"
-alias ll="ls -la"
+alias ls="ls -ahHLpvx --group-directories-first --color=auto --time-style=+%Y-%m-%dT%H:%M:%S"
+alias ll="ls -l"
