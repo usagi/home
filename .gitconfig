@@ -10,3 +10,5 @@
 [alias]
   push-current-branch = !git push origin `git rev-parse --abbrev-ref HEAD`
 
+[color]
+	ui = true
