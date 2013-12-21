@@ -1,9 +1,11 @@
 /*
 /.*
 
+
 !/.gitignore
 
 !/.gitconfig
+!/.gitconfig.d
 !/.emscripten
 !/.xmodmaprc
 !/.zshrc
