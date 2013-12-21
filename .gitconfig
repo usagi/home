@@ -9,3 +9,5 @@
 	ui = true
 [merge]
 	tool = meld
+[core]
+	editor = vim --noplugin -Z
