@@ -5,5 +5,5 @@ find.bin()
 
 find.include()
 {
-  find `echo $CPLUS_INCLUDE_PATH | tr : " "` -name $1 2>/dev/null
+  find `echo $CPLUS_INCLUDE_PATH | tr : " "` /usr/local/include /usr/include -name $1 2>/dev/null
 }
