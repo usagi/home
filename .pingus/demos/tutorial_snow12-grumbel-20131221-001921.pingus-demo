@@ -1,0 +1,9 @@
+(level 
+  (name "tutorial/snow12-grumbel")
+  (checksum "669222988650474274"))
+(pingu-action (time 286) (id 1) (raw-x "7d573f44") (raw-y "faaebe43") (action "jumper"))
+(pingu-action (time 308) (id 1) (raw-x "7dd74344") (raw-y "faaebe43") (action "jumper"))
+(pingu-action (time 632) (id 3) (raw-x "7d174044") (raw-y "fa2ebf43") (action "jumper"))
+(pingu-action (time 772) (id 1) (raw-x "163f5144") (raw-y "1cf0be43") (action "bomber"))
+(armageddon (time 935))
+(end (time 1115))

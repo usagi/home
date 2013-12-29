@@ -1,9 +1,11 @@
 /*
 /.*
 
+
 !/.gitignore
 
 !/.gitconfig
+!/.gitconfig.d
 !/.emscripten
 !/.xmodmaprc
 !/.zshrc
@@ -19,6 +21,7 @@
 !/.vimperatorrc
 !/.byobu
 !/.Rprofile
+!/.ackrc
 !/README.md
 
 !/.gconf
@@ -27,3 +30,6 @@
 
 !./zprofile
 !./profile
+
+!/.pingus
+

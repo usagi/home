@@ -3,10 +3,12 @@
 	name = Usagi Ito
 [push]
 	default = simple
-[pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
 [alias]
   push-current-branch = !git push origin `git rev-parse --abbrev-ref HEAD`
-
+[color]
+	ui = true
+[merge]
+	tool = meld
+[core]
+	editor = vim --noplugin -Z
+	excludesfile = ~/.gitconfig.d/.gitignore
