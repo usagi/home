@@ -1,3 +1,7 @@
+if [ `uname -s` = 'Darwin' ]; then
+  export CLICOLOR=1
+fi
+
 export TERM=xterm-256color
 
 export LSCOLORS=exfxcxdxbxegedabagacad
