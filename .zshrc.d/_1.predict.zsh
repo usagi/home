@@ -19,5 +19,6 @@ predict.toggle()
 zle -N predict.toggle
 
 bindkey "^[[2~" predict.toggle
+bindkey "^[[Z" predict.toggle
 
 zstyle ':predict' verbose true
