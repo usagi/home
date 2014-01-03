@@ -1,0 +1,1 @@
+alias objdump='objdump -CdSx'
