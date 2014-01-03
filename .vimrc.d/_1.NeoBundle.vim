@@ -26,3 +26,5 @@ NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'rhysd/wandbox-vim'
+NeoBundle 'rkitover/vimpager'
+
