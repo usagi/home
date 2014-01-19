@@ -12,3 +12,4 @@
 [core]
 	editor = vim --noplugin -Z
 	excludesfile = ~/.gitconfig.d/.gitignore
+	quotepath = false
