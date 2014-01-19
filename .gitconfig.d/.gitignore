@@ -65,6 +65,9 @@ Icon
 .Spotlight-V100
 .Trashes
 
+# KDE Dolphin
+.directory
+
 # build-dir
 build/
 
