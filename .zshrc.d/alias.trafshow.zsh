@@ -1,0 +1,1 @@
+alias trafshow="sudo trafshow"

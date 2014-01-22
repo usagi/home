@@ -2,13 +2,7 @@
 
 ## What's this
 
-Usagi Ito's public home files. It's include .zshrc, .vimrc, and some configuration files.
-
-## Contacts
-
-* Facebook : [usagi.wrp](https://www.facebook.com/usagi.wrp)
-* Twitter  : [@USAGI_WRP](https://twitter.com/USAGI_WRP)
-* E-Mail   : [Usagi Ito](mailto:usagi@WonderRabbitProject.net)
+my home directory setting files. forked from https://github.com/usagi/home .
 
 ## License
 
@@ -32,4 +26,5 @@ This work is published from:
 ## Author
 
 ©2012 [Usagi Ito](mailto:usagi@WonderRabbitProject.net)
+©2013 arisin
 

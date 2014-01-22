@@ -1,0 +1,10 @@
+(level 
+  (name "tutorial/snow19-grumbel")
+  (checksum "3503227939282668905"))
+(pingu-action (time 378) (id 0) (raw-x "00806544") (raw-y "00009443") (action "bridger"))
+(pingu-action (time 1351) (id 0) (raw-x "00409b44") (raw-y "0000a743") (action "bridger"))
+(pingu-action (time 2694) (id 0) (raw-x "0020b544") (raw-y "0080f343") (action "bridger"))
+(pingu-action (time 3652) (id 4) (raw-x "00408b44") (raw-y "00001a44") (action "blocker"))
+(pingu-action (time 3994) (id 0) (raw-x "0040ac44") (raw-y "00005144") (action "bridger"))
+(armageddon (time 8763))
+(end (time 8920))

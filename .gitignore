@@ -1,13 +1,17 @@
 /*
 /.*
 
+
 !/.gitignore
 
 !/.gitconfig
+!/.gitconfig.d
 !/.emscripten
 !/.xmodmaprc
 !/.zshrc
+!/.zshrc.d
 !/.vimrc
+!/.vimrc.d
 !/.gvimrc
 !/.qvimrc
 !/.astylerc
@@ -15,10 +19,17 @@
 !/.colorgcc
 !/.gemrc
 !/.vimperatorrc
+!/.byobu
 !/.Rprofile
+!/.ackrc
 !/README.md
 
 !/.gconf
 
 !/opt
+
+!./zprofile
+!./profile
+
+!/.pingus
 

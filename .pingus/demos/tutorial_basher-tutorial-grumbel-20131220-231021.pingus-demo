@@ -1,0 +1,7 @@
+(level 
+  (name "tutorial/basher-tutorial-grumbel")
+  (checksum "-2074956538827133359"))
+(pingu-action (time 488) (id 0) (raw-x "08640044") (raw-y "b26df843") (action "basher"))
+(pingu-action (time 1413) (id 5) (raw-x "08e47c44") (raw-y "d9360644") (action "basher"))
+(pingu-action (time 1883) (id 1) (raw-x "0432a544") (raw-y "d9760444") (action "basher"))
+(end (time 3371))
