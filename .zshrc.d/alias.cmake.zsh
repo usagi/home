@@ -11,6 +11,7 @@ do
   alias cmake.ninja.${compiler}="cmake.ninja -DCMAKE_CXX_COMPILER=\"${compiler}\""
   alias cmake.ninja.${compiler}.release="cmake.ninja.${compiler} -DCMAKE_BUILD_TYPE=release"
   alias cmake.ninja.${compiler}.debug="cmake.ninja.${compiler} -DCMAKE_BUILD_TYPE=debug"
+  alias cmake.ninja.${compiler}.relwithdebinfo="cmake.ninja.${compiler} -DCMAKE_BUILD_TYPE=relwithdebinfo"
 done
 
 alias cmake.codeblocks.make='cmake -G "CodeBlocks - Unix Makefiles"'
