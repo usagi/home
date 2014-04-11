@@ -5,6 +5,7 @@
 	default = simple
 [alias]
   push-current-branch = !git push origin `git rev-parse --abbrev-ref HEAD`
+	merge-no-ff = merge --no-ff
 [color]
 	ui = true
 [merge]

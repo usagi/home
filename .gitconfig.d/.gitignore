@@ -70,4 +70,8 @@ Icon
 
 # build-dir
 build/
+build.*/
+
+# kdevelop
+_custom.kdev4
 
