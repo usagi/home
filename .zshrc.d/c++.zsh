@@ -28,3 +28,9 @@ alias clang++="clang++ $CXX_FLAGS_RELEASE"
 alias clang++.debug="clang++ $CXX_FLAGS_DEBUG"
 alias clang++11="clang++ $CXX_FLAGS_RELEASE --std=c++11"
 alias clang++11.debug="clang++ $CXX_FLAGS_DEBUG --std=c++11"
+
+# em++ aliases
+alias em++="em++ $CXX_FLAGS_RELEASE"
+alias em++.debug="em++ $CXX_FLAGS_DEBUG"
+alias em++11="em++ $CXX_FLAGS_RELEASE --std=c++11"
+alias em++11.debug="em++ $CXX_FLAGS_DEBUG --std=c++11"

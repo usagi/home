@@ -1,0 +1,1 @@
+alias gprof='gprof --demangle'
