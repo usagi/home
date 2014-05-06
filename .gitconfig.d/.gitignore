@@ -72,6 +72,14 @@ Icon
 build/
 build.*/
 
+# kate
+.kateproject.d/
+
 # kdevelop
 _custom.kdev4
+.kdev4/
+.kdev_*
 
+# ninja
+.ninja_deps
+.ninja_log
