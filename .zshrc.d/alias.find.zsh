@@ -1,3 +1,14 @@
+if [ `uname -s` = 'FreeBSD' ]; then
+  find.ports()
+  {
+    find \
+      /usr/ports \
+      -iname "*$1*" \
+      2>/dev/null \
+    | sort | uniq
+  }
+fi
+
 find.bin()
 {
   find \
