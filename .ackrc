@@ -105,3 +105,4 @@
 --type-add=readme:is:README
 --type-add=readme:is:README.md
 --type-add=readme:is:README.txt
+--type-add=all:firstlinematch:/./
