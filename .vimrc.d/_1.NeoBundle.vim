@@ -28,3 +28,9 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'rhysd/wandbox-vim'
 NeoBundle 'rkitover/vimpager'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
+
+"rust bundle vim settings
+NeoBundle 'vim', { 'type' : 'nosync', 'base' : '~/repos/rust/src/etc' }
