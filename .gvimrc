@@ -1,4 +1,4 @@
-set guifont=Takaoゴシック\ 18
+set guifont=Ricty\ Discord\ 18
 
 set lines=30
 set columns=82
