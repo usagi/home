@@ -9,7 +9,7 @@ let g:quickrun_config['_'] =
 
 let g:quickrun_config['markdown'] =
   \ { 'outputter' : 'browser'
-  \ , 'type': 'markdown/pandoc'
+  \ , 'type': 'markdown/gfm'
   \ }
 
 let g:quickrun_config['markdown/pandoc'] =
@@ -25,36 +25,20 @@ let g:quickrun_config['html/firefox']  = { 'command': 'firefox' }
 let g:quickrun_config['cpp'] = { 'type' : 'cpp/clang++' }
 let g:quickrun_config['cpp/clang++'] =
   \ { 'command' : 'clang++'
-  \ , 'exec'    : [ '%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r'
-  \               , '%s:p:r %a'
-  \               , 'rm -f %s:p:r'
-  \               ]
-  \ , 'tempfile': '%{tempname()}.cpp'
+  \ , 'cmdopt'  : '-std=c++11 -Wall -pedantic-errors'
   \ }
 let g:quickrun_config['cpp/g++'] =
   \ { 'command' : 'clang++'
-  \ , 'exec'    : [ '%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r'
-  \               , '%s:p:r %a'
-  \               , 'rm -f %s:p:r'
-  \               ]
-  \ , 'tempfile': '%{tempname()}.cpp'
+  \ , 'cmdopt'  : '-std=c++11 -Wall -pedantic-errors'
   \ }
 let g:quickrun_config['cpp/em++'] = { 'type' : 'cpp/em++/js' }
 let g:quickrun_config['cpp/em++/js'] =
   \ { 'command' : 'em++'
-  \ , 'exec'    : [ '%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r.js'
-  \               , '%s:p:r.js %a'
-  \               , 'rm -f %s:p:r.js'
-  \               ]
-  \ , 'tempfile': '%{tempname()}.cpp'
+  \ , 'cmdopt'  : '-std=c++11 -Wall -pedantic-errors'
   \ }
 let g:quickrun_config['cpp/em++/html'] =
   \ { 'command' : 'em++'
-  \ , 'exec'    : [ '%c -std=c++11 -Wall -pedantic-errors %o %s -o %s:p:r.html'
-  \               , '%s:p:r.html %a'
-  \               , 'rm -f %s:p:r.html'
-  \               ]
-  \ , 'tempfile': '%{tempname()}.cpp'
+  \ , 'cmdopt'  : '-std=c++11 -Wall -pedantic-errors'
   \ }
 
 let g:quickrun_config['cmake-build'] =
