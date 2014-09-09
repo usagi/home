@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd /tmp
+wget http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.2.tar.xz
+tar xfv `find . -type f -name 'gettext*'`
+cd `find . -type d -name 'gettext*'`
+./confiture --prefix=/home/`id -un`/opt
+make
+make install
+

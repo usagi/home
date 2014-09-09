@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd /tmp
+git clone git://sourceware.org/git/glibc.git
+cd glibc
+mkdir build
+cd build
+../configure \
+  --prefix=/home/`id -un`/opt \
+make
+make install
+
