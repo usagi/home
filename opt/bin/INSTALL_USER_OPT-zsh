@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd /tmp
+wget http://www.zsh.org/pub/zsh.tar.bz2
+tar xfv zsh.tar.bz2
+cd `find . -type d -name 'zsh*'`
+./confiture --prefix=/home/`id -un`/opt
+make
+make install
+
