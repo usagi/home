@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd /tmp
+wget http://zlib.net/zlib-1.2.8.tar.gz
+tar xfv zlib-1.2.8.tar.gz
+cd `find . -type d -name 'zlib*'`
+./confiture --prefix=/home/`id -un`/opt
+make
+make install
+
