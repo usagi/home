@@ -1,2 +1,1 @@
-alias vim="vim -p"
-#alias gvim="nocorrect gvim -p"
+alias vim="nvim -p"

@@ -2,7 +2,7 @@ set nocompatible
 if has('vim_starting')
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc',{
   \'build':{
@@ -13,7 +13,6 @@ NeoBundle 'Shougo/vimproc',{
   \}
 \}
 filetype plugin indent on
-NeoBundleCheck
 
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'plasticboy/vim-markdown'
@@ -28,9 +27,13 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'rhysd/wandbox-vim'
 NeoBundle 'rkitover/vimpager'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
+"NeoBundle 'tyru/open-browser.vim'
+"NeoBundle 'mattn/webapi-vim'
+"NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
 
 "rust bundle vim settings
 NeoBundle 'vim', { 'type' : 'nosync', 'base' : '~/repos/rust/src/etc' }
+
+call neobundle#end()
+
+NeoBundleCheck
