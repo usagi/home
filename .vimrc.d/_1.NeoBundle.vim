@@ -14,6 +14,15 @@ NeoBundle 'Shougo/vimproc',{
 \}
 filetype plugin indent on
 
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'thinca/vim-quickrun'
@@ -32,7 +41,7 @@ NeoBundle 'rkitover/vimpager'
 "NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
 
 "rust bundle vim settings
-NeoBundle 'vim', { 'type' : 'nosync', 'base' : '~/repos/rust/src/etc' }
+"NeoBundle 'vim', { 'type' : 'nosync', 'base' : '~/repos/rust/src/etc' }
 
 call neobundle#end()
 
