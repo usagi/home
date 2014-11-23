@@ -1,1 +1,0 @@
-/home/usagi/repos/libWRP-SDL2/include/WonderRabbitProject/SDL2.hpp

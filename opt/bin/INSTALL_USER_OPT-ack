@@ -1,2 +1,0 @@
-#!/bin/bash
-curl http://beyondgrep.com/ack-2.14-single-file > ~/opt/bin/ack && chmod 0755 ~/opt/bin/ack
