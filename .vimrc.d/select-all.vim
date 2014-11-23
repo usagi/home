@@ -1,1 +1,1 @@
-"nmap <C-a> ggVG
+nmap <C-a> ggVG
