@@ -45,6 +45,8 @@ NeoBundle 'vim-jp/cpp-vim'
 "NeoBundle 'vim', { 'type' : 'nosync', 'base' : '~/repos/rust/src/etc' }
 
 NeoBundle 'Shougo/neocomplete.vim'
+"NeoBundle 'osyo-manga/vim-marching'
+NeoBundle 'Rip-Rip/clang_complete'
 
 call neobundle#end()
 
