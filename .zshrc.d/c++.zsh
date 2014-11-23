@@ -1,12 +1,12 @@
 # path
-export PATH=$HOME/opt/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # include path
-export CPATH=$HOME/opt/include:$CPATH
-export CPLUS_INCLUDE_PATH=$HOME/opt/include:$CPLUS_INCLUDE_PATH
+export CPATH=$HOME/include:$CPATH
+export CPLUS_INCLUDE_PATH=$HOME/include:$CPLUS_INCLUDE_PATH
 
 # library path
-export LD_LIBRARY_PATH=$HOME/opt/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/lib:$LD_LIBRARY_PATH
 
 # compile options
 export CXX_FLAGS="-Wall -pedantic-errors"

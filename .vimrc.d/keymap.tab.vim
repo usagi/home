@@ -1,2 +1,2 @@
-nnoremap <M-Left> :tabprevious<cr>
-nnoremap <M-Right> :tabnext<cr>
+nnoremap <C-Left> :tabprevious<cr>
+nnoremap <C-Right> :tabnext<cr>

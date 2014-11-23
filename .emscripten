@@ -4,23 +4,24 @@
 import os
 
 # this helps projects using emscripten find it
-EMSCRIPTEN_ROOT = os.path.expanduser(os.getenv('EMSCRIPTEN') or '/home/usagi/opt/emscripten') # directory
-#LLVM_ROOT = os.path.expanduser(os.getenv('LLVM') or '/usr/bin') # directory
-LLVM_ROOT = '/home/usagi/repos/emscripten-fastcomp/build/bin' # directory
-PYTHON = os.path.expanduser(os.getenv('PYTHON') or '/usr/bin/python') # executable
+EMSCRIPTEN_ROOT = os.path.expanduser(os.getenv('EMSCRIPTEN') or '/home/usagi/repos/emscripten') # directory
+LLVM_ROOT = os.path.expanduser(os.getenv('LLVM') or '/home/usagi/repos/emscripten-fastcomp/build/bin') # directory
+
+# If not specified, defaults to sys.executable.
+#PYTHON = 'python'
 
 # See below for notes on which JS engine(s) you need
-NODE_JS = os.path.expanduser(os.getenv('NODE') or '/usr/bin/nodejs') # executable
+NODE_JS = os.path.expanduser(os.getenv('NODE') or '/home/usagi/opt/bin/node') # executable
 SPIDERMONKEY_ENGINE = [os.path.expanduser(os.getenv('SPIDERMONKEY') or 'js')] # executable
 V8_ENGINE = os.path.expanduser(os.getenv('V8') or 'd8') # executable
 
 JAVA = 'java' # executable
 
-TEMP_DIR = '/tmp' # You will need to modify this on Windows
+TEMP_DIR = '/tmp'
+
+CRUNCH = os.path.expanduser(os.getenv('CRUNCH') or 'crunch') # executable
 
 #CLOSURE_COMPILER = '..' # define this to not use the bundled version
-
-#LLVM_ADD_VERSION = '3.3'
 
 ########################################################################################################
 

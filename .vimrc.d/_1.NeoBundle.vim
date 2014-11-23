@@ -30,7 +30,6 @@ NeoBundle 'errormarker.vim'
 NeoBundle 'osyo-manga/vim-precious'
 NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'Shougo/vinarise.vim'
-NeoBundle 'vim-jp/cpp-vim'
 "NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -39,9 +38,13 @@ NeoBundle 'rkitover/vimpager'
 "NeoBundle 'tyru/open-browser.vim'
 "NeoBundle 'mattn/webapi-vim'
 "NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'vim-jp/cpp-vim'
 
 "rust bundle vim settings
 "NeoBundle 'vim', { 'type' : 'nosync', 'base' : '~/repos/rust/src/etc' }
+
+NeoBundle 'Shougo/neocomplete.vim'
 
 call neobundle#end()
 
