@@ -1,1 +1,0 @@
-au Bufenter *.ts setf typescript

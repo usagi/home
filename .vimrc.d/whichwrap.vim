@@ -1,1 +1,0 @@
-set whichwrap=b,s,<,>,[,]
