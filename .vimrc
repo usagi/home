@@ -50,7 +50,7 @@ filetype plugin indent on
 
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+scriptencoding utf-8
 
 set backspace=indent,eol,start
 
@@ -172,6 +172,9 @@ cnoreabbrev Q q
 set whichwrap=b,s,h,l,<,>,[,]
 
 set list
+set listchars=eol:$,tab:>-
+highlight NonText ctermfg=7 guifg=gray
+
 set showmatch
 set laststatus=2
 
