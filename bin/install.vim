@@ -1,9 +1,8 @@
 #!/bin/sh
 
 sudo apt-get update
+sudo apt-get build-dep vim -y
 sudo apt-get install -y\
-  build-dep \
-  vim \
   mercurial \
   gettext \
   libncurses5-dev \
