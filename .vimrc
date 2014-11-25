@@ -246,6 +246,10 @@ let g:clang_format#style_options = {
   \ 'CommentPragmas'                   : '\*',
   \ }
 
+if !exists('g:quickrun_config')
+  let g:quickrun_config = {}
+endif
+
 let g:quickrun_config['html'] = { 'type': 'html/w3m' }
 let g:quickrun_config['html/w3m']      = { 'command': 'w3m' }
 let g:quickrun_config['html/chromium'] = { 'command': 'chromium' }
