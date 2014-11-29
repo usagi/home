@@ -173,7 +173,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 
 set list
 set listchars=eol:$,tab:>-
-highlight NonText ctermfg=7 guifg=gray
+highlight NonText ctermfg=8 guifg=gray
+highlight SpecialKey ctermfg=8 guifg=gray
 
 set showmatch
 set laststatus=2
@@ -188,8 +189,6 @@ set history=8192
 autocmd BufEnter * :syntax sync fromstart
 
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
 
 autocmd FileType make setlocal noexpandtab
 autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
