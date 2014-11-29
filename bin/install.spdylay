@@ -1,0 +1,42 @@
+#!/bin/sh
+
+sudo apt-get update
+sudo apt-get install -y\
+  git \
+  build-essential \
+  autotools-dev \
+  automake \
+  autoconf \
+  g++ \
+  libxml2-dev \
+  libevent-dev \
+  libcunit1-dev \
+  zlib1g-dev \
+  pkg-config \
+  libtool
+
+cd $HOME/repos
+if [ -d spdylay ]; then
+  cd spdylay
+  git pull
+else
+  git clone git@github.com:tatsuhiro-t/spdylay.git
+  cd spdylay
+fi
+
+autoreconf -i
+automake
+autoconf
+
+./configure \
+  --prefix=$HOME
+
+make \
+  html
+
+make \
+  -j$(grep -c ^processor /proc/cpuinfo)
+
+make \
+  install
+
