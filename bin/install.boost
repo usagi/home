@@ -1,0 +1,64 @@
+#!/bin/sh
+
+sudo apt-get update
+sudo apt-get build-dep libboost-all-dev -y
+sudo apt-get install -y\
+  git \
+  build-essential \
+  autotools-dev \
+  g++ \
+  python-dev \
+  libicu-dev \
+  libbz2-dev \
+  mpi-default-dev \
+  libopenmpi-dev \
+  libmpich2-dev
+
+cd $HOME/repos
+if [ -d boost ]; then
+  cd boost
+  git fetch
+  git checkout `git tag | grep -e "^boost-[0-9]\+.[0-9]\+.[0-9]\+$" | tail -n1`
+  git pull
+  git submodule update --init --recursive
+else
+  git clone --recursive git@github.com:boostorg/boost.git
+  cd boost
+  git checkout `git tag | grep -e "^boost-[0-9]\+.[0-9]\+.[0-9]\+$" | tail -n1`
+fi
+
+if [ -z "${ADDRESS_MODEL+x}" ]; then ADDRESS_MODEL='address-model=64'; fi;
+if [ -z "${ARCHITECTURE+x}"  ]; then ARCHITECTURE='architecture=x86'; fi;
+
+if [ -z "${WITH_TOOLSET+x}" ]; then
+#  if env mpic++ --version | grep g++ > /dev/null; then
+#    WITH_TOOLSET='--with-toolset=gcc'
+#  elif env mpic++ --version | grep clang++ > /dev/null; then
+#    WITH_TOOLSET='--with-toolset=clang'
+#  else
+    WITH_TOOLSET=''
+#  fi
+fi
+
+#if [ ! -f $HOME/user-config.jam ]; then
+#  echo 'using mpi ;' > $HOME/user-config.jam
+#fi
+
+./bootstrap.sh \
+  --prefix=$HOME \
+  $WITH_TOOLSET \
+  --with-libraries=all
+
+./b2 headers
+
+./b2 \
+  --build-type=complete \
+  --layout=tagged \
+  --variant=release \
+  --threading=multi \
+  -j$(grep -c ^processor /proc/cpuinfo) \
+  -a \
+  $ADDRESS_MODEL \
+  $ARCHITECTURE \
+  install
+
