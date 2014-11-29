@@ -54,11 +54,22 @@ fi
 ./b2 \
   --build-type=complete \
   --layout=tagged \
-  --variant=release \
-  --threading=multi \
   -j$(grep -c ^processor /proc/cpuinfo) \
   -a \
   $ADDRESS_MODEL \
   $ARCHITECTURE \
   install
+
+cd $HOME/lib
+if [ ! -f libboost_thread.a ]; then
+  if [ -f libboost_thread-mt.a ]; then
+    ln -s libboost_thread-mt.a libboost_thread.a
+  fi
+fi
+
+if [ ! -f libboost_thread.so ]; then
+  if [ -f libboost_thread-mt.so ]; then
+    ln -s libboost_thread-mt.so libboost_thread.so
+  fi
+fi
 
