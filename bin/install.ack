@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo apt-get update
+apt-get.update.once-everyday
 sudo apt-get build-dep ack-grep -y
 sudo apt-get install -y\
   curl
