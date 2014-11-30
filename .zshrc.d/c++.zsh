@@ -9,6 +9,7 @@ export CPLUS_INCLUDE_PATH=$HOME/include:$CPLUS_INCLUDE_PATH
 export LD_LIBRARY_PATH=$HOME/lib:$LD_LIBRARY_PATH
 
 # compile options
+export LDFLAGS="-L$(echo $LD_LIBRARY_PATH | sed 's/:/ -L/g')"
 export CXX_FLAGS="-Wall -pedantic-errors"
 export CXX_FLAGS_RELEASE="-O3 -march=native"
 export CXX_FLAGS_RELEASE_EM="-O3"
