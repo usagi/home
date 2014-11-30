@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ ! $(( $(stat -c %Y /var/cache/apt) + 86400 < $(date +%s) )) ]; then
+  sudo apt-get update
+else
+  echo 'skip `sudo apt-get update`'
+fi
