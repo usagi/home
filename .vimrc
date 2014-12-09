@@ -27,7 +27,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'osyo-manga/vim-marching'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'gorodinskiy/vim-coloresque'
@@ -196,25 +196,22 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 autocmd FileType make setlocal noexpandtab
 autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 
-let g:clang_periodic_quickfix = 0
-let g:clang_complete_copen    = 0
-let g:clang_use_library       = 1
-let g:clang_library_path  = '/usr/lib/llvm-3.5/lib'
-let g:clang_user_options  = '-std=c++11 -stdlib=libc++'
-let g:clang_complete_auto = 0
-let g:clang_auto_select   = 0
+set updatetime=200
+
+let g:marching_clang_command = 'clang++'
+let g:marching#clang_command#options = { 'cpp' : '-std=c++11 -stdlib=libc++' }
+let g:marching_include_paths = [ '/usr/include/c++/4.9' ]
+let g:marching_enable_neocomplete = 1
 
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#skip_auto_completion_time = ""
-let g:neocomplete#force_overwrite_completefunc = 1
 let g:neocomplete#force_omni_input_patterns.c      = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 let g:neocomplete#force_omni_input_patterns.cpp    = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.objc   = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.objcpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+"let g:neocomplete#force_omni_input_patterns.objc   = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+"let g:neocomplete#force_omni_input_patterns.objcpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 let g:airline_theme = 'powerlineish'
 let g:airline_enable_branch = 1
