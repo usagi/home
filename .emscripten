@@ -11,7 +11,7 @@ LLVM_ROOT = os.path.expanduser(os.getenv('LLVM') or '/home/usagi/repos/emscripte
 #PYTHON = 'python'
 
 # See below for notes on which JS engine(s) you need
-NODE_JS = os.path.expanduser(os.getenv('NODE') or '/home/usagi/opt/bin/node') # executable
+NODE_JS = os.path.expanduser(os.getenv('NODE') or '/home/usagi/bin/node') # executable
 SPIDERMONKEY_ENGINE = [os.path.expanduser(os.getenv('SPIDERMONKEY') or 'js')] # executable
 V8_ENGINE = os.path.expanduser(os.getenv('V8') or 'd8') # executable
 
