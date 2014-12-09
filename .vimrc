@@ -41,6 +41,9 @@ NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'godlygeek/tabular'
+
+NeoBundle 'katono/rogue.vim'
 
 call neobundle#end()
 
@@ -227,8 +230,9 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_cpp_compiler = 'clang++'
+"let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_include_dirs = [ 'include' ]
 
 let g:clang_format#command = 'clang-format-3.5'
 let g:clang_format#style_options = {
