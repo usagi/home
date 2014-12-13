@@ -4,6 +4,7 @@
 [push]
 	default = simple
 [alias]
+  submodule-update-init-recursive = !git submodule update --init --recursive
   push-current-branch = !git push origin `git rev-parse --abbrev-ref HEAD`
 	merge-no-ff = merge --no-ff
 [color]
