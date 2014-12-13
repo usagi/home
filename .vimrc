@@ -42,8 +42,10 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'godlygeek/tabular'
-
 NeoBundle 'katono/rogue.vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'mfumi/ref-dicts-en'
+NeoBundle 'tyru/vim-altercmd'
 
 call neobundle#end()
 
@@ -200,8 +202,12 @@ set updatetime=200
 
 let g:marching_clang_command = 'clang++'
 let g:marching#clang_command#options = { 'cpp' : '-std=c++11 -stdlib=libc++' }
-let g:marching_include_paths = [ '/usr/include/c++/4.9' ]
+let g:marching_include_paths = [ '/usr/include/c++/4.9', '/home/usagi/include' ]
 let g:marching_enable_neocomplete = 1
+let g:marching_backend = 'sync_clang_command'
+
+imap <buffer> <C-x><C-o> <Plug>(marching_start_omni_complete)
+imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
 
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
@@ -294,4 +300,17 @@ augroup vimrc-set_filetype_cpp
   autocmd!
   autocmd BufReadPost $CPP_STDLIB/* if empty(&filetype) | set filetype=cpp | endif
 augroup END
+
+autocmd FileType ref-* nnoremap <buffer> <silent> q :<c-u>close<cr>
+
+let g:ref_source_webdict_sites = {
+      \   'cplusplus.com': { 'url': 'http://www.cplusplus.com/search.do?q=%s', },
+      \   'cpprefjp': { 'url': 'http://cpprefjp.github.io/reference/%s.html', },
+      \ }
+
+let g:ref_source_webdict_sites.default = 'cpluspluscom'
+
+call altercmd#load()
+CAlterCommand rcxx Ref webdict cplusplus.com
+CAlterCommand rcxxjp Ref webdict cpprefjp
 
