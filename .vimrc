@@ -27,6 +27,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+"NeoBundle 'osyo-manga/vim-reunions'
 NeoBundle 'osyo-manga/vim-marching'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
@@ -46,6 +47,7 @@ NeoBundle 'katono/rogue.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'mfumi/ref-dicts-en'
 NeoBundle 'tyru/vim-altercmd'
+NeoBundle 'vim-scripts/DoxygenToolkit.vim'
 
 call neobundle#end()
 
@@ -61,8 +63,9 @@ set backspace=indent,eol,start
 
 set hidden
 set autoread
+
 set nobackup
-set noswapfile
+set swapfile
 
 set hlsearch
 set incsearch
@@ -181,6 +184,8 @@ set listchars=eol:$,tab:>-
 highlight NonText ctermfg=8 guifg=gray
 highlight SpecialKey ctermfg=8 guifg=gray
 
+set undofile
+
 set showmatch
 set laststatus=2
 
@@ -208,6 +213,18 @@ let g:marching_backend = 'sync_clang_command'
 
 imap <buffer> <C-x><C-o> <Plug>(marching_start_omni_complete)
 imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
+
+augroup cpp
+  autocmd!
+  autocmd FileType cpp call s:cpp()
+augroup END
+
+function! s:cpp()
+  augroup filetype-cpp
+    autocmd! * <buffer>
+    autocmd InsertLeave <buffer> MarchingClearCache
+  augroup END
+endfunction
 
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
@@ -313,4 +330,8 @@ let g:ref_source_webdict_sites.default = 'cpluspluscom'
 call altercmd#load()
 CAlterCommand rcxx Ref webdict cplusplus.com
 CAlterCommand rcxxjp Ref webdict cpprefjp
+
+let g:DoxygenToolkit_commentType = "C++"
+let g:DoxygenToolkit_authorName = "Usagi Ito <usagi@WonderRabbitProject.net>"
+let g:DoxygenToolkit_licenseTag = "MIT"
 
