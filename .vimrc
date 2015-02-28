@@ -27,14 +27,19 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+
+" どうも安定して使いこなせない
 "NeoBundle 'osyo-manga/vim-reunions'
-NeoBundle 'osyo-manga/vim-marching'
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'osyo-manga/vim-marching'
+
+NeoBundle 'Valloric/YouCompleteMe'
+
+"NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'tyru/caw.vim'
-NeoBundle 'Shougo/neocomplete.vim'
+"NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'rhysd/vim-clang-format'
 NeoBundle 'Shougo/vinarise.vim'
@@ -43,17 +48,26 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'katono/rogue.vim'
+
+" あそびたくなったらまた入れる
+"NeoBundle 'katono/rogue.vim'
+
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'mfumi/ref-dicts-en'
 NeoBundle 'tyru/vim-altercmd'
-NeoBundle 'vim-scripts/DoxygenToolkit.vim'
+
+" 結局手書きするので要らないという
+"NeoBundle 'vim-scripts/DoxygenToolkit.vim'
+
+NeoBundle 'tikhomirov/vim-glsl'
 
 call neobundle#end()
 
 NeoBundleCheck
 
 filetype plugin indent on
+
+set tabpagemax=256
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -129,7 +143,7 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\ %{fugitive#statusline()}
+"set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\ %{fugitive#statusline()}
 
 set tabstop=2
 set softtabstop=2
@@ -149,6 +163,10 @@ noremap <leader>gs :Gstatus<CR>
 noremap <leader>gb :Gblame<CR>
 noremap <leader>gd :Gvdiff<CR>
 noremap <leader>gr :Gremove<CR>
+
+noremap <leader>f <C-w>gf
+
+nmap <esc><esc> :nohlsearch<cr>
 
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
@@ -206,7 +224,7 @@ autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 set updatetime=200
 
 let g:marching_clang_command = 'clang++'
-let g:marching#clang_command#options = { 'cpp' : '-std=c++11 -stdlib=libc++' }
+let g:marching#clang_command#options = { 'cpp' : '-std=c++14 -stdlib=libc++' }
 let g:marching_include_paths = [ '/usr/include/c++/4.9', '/home/usagi/include' ]
 let g:marching_enable_neocomplete = 1
 let g:marching_backend = 'sync_clang_command'
@@ -226,6 +244,8 @@ function! s:cpp()
   augroup END
 endfunction
 
+nmap <buffer> <leader>e :MarchingBufferClearCache<cr>
+
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
@@ -243,6 +263,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tagbar#enabled = 1
 
+"let g:syntastic_debug=1
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -250,14 +271,14 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
-"let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++ -Wall -pedantic-errors  -I/usr/include/c++/4.9 -I/usr/include/x86_64-linux-gnu/c++/4.9'
 let g:syntastic_cpp_include_dirs = [ 'include' ]
 
 let g:clang_format#command = 'clang-format-3.5'
 let g:clang_format#style_options = {
   \ 'BasedOnStyle'                     : 'LLVM',
-  \ 'Standard'                         : 'C++11',
+  \ 'Standard'                         : 'C++14',
   \ 'AlignEscapedNewlinesLeft'         : 'true',
   \ 'AlwaysBreakBeforeMultilineStrings': 'true',
   \ 'Cpp11BracedListStyle'             : 'true',
@@ -284,21 +305,25 @@ let g:quickrun_config['html/firefox']  = { 'command': 'firefox' }
 let g:quickrun_config['cpp'] = { 'type' : 'cpp/clang++' }
 let g:quickrun_config['cpp/clang++'] =
   \ { 'command' : 'clang++'
-  \ , 'cmdopt'  : '-std=c++11 -Wall -pedantic-errors'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread'
   \ }
 let g:quickrun_config['cpp/g++'] =
   \ { 'command' : 'clang++'
-  \ , 'cmdopt'  : '-std=c++11 -Wall -pedantic-errors'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread'
   \ }
 let g:quickrun_config['cpp/em++'] = { 'type' : 'cpp/em++/js' }
 let g:quickrun_config['cpp/em++/js'] =
   \ { 'command' : 'em++'
-  \ , 'cmdopt'  : '-std=c++11 -Wall -pedantic-errors'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors'
   \ }
 let g:quickrun_config['cpp/em++/html'] =
   \ { 'command' : 'em++'
-  \ , 'cmdopt'  : '-std=c++11 -Wall -pedantic-errors'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors'
   \ }
+
+let g:quickrun_config['*'] = { 'split': '' }
+
+nmap <buffer> <leader>r :QuickRun<cr>
 
 function! s:cpp()
   setlocal path+=~/include,/usr/local/include,/usr/include
@@ -335,3 +360,5 @@ let g:DoxygenToolkit_commentType = "C++"
 let g:DoxygenToolkit_authorName = "Usagi Ito <usagi@WonderRabbitProject.net>"
 let g:DoxygenToolkit_licenseTag = "MIT"
 
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_show_diagnostics_ui = 0

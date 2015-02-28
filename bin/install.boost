@@ -12,7 +12,10 @@ sudo apt-get install -y\
   libbz2-dev \
   mpi-default-dev \
   libopenmpi-dev \
-  libmpich2-dev
+  libmpich2-dev \
+  clang-3.5 \
+  llvm-3.5-dev \
+  libc++-dev
 
 cd $HOME/repos
 if [ -d boost ]; then
@@ -31,18 +34,13 @@ if [ -z "${ADDRESS_MODEL+x}" ]; then ADDRESS_MODEL='address-model=64'; fi;
 if [ -z "${ARCHITECTURE+x}"  ]; then ARCHITECTURE='architecture=x86'; fi;
 
 if [ -z "${WITH_TOOLSET+x}" ]; then
-#  if env mpic++ --version | grep g++ > /dev/null; then
-#    WITH_TOOLSET='--with-toolset=gcc'
-#  elif env mpic++ --version | grep clang++ > /dev/null; then
-#    WITH_TOOLSET='--with-toolset=clang'
-#  else
-    WITH_TOOLSET=''
-#  fi
+  WITH_TOOLSET='--with-toolset=clang'
+  TOOLSET='clang'
 fi
 
-#if [ ! -f $HOME/user-config.jam ]; then
-#  echo 'using mpi ;' > $HOME/user-config.jam
-#fi
+user_configFile=`find $PWD -name user-config.jam`
+echo "using mpi ;" >> $user_configFile
+cp $user_configFile ~
 
 ./bootstrap.sh \
   --prefix=$HOME \
@@ -52,12 +50,20 @@ fi
 ./b2 headers
 
 ./b2 \
+  --prefix=$HOME \
+  $TOOLSET \
+  cxxflags='-std=c++14 -stdlib=libc++' \
   --build-type=complete \
   --layout=tagged \
   -j$(grep -c ^processor /proc/cpuinfo) \
   -a \
+  -link=static,shared \
+  runtime-link=shared \
+  threading=multi \
+  variant=release \
   $ADDRESS_MODEL \
   $ARCHITECTURE \
+  instruction-set=native
   install
 
 cd $HOME/lib

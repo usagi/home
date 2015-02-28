@@ -1,3 +1,3 @@
-export PAGER=vimpager
-alias less=$PAGER
-alias zless=$PAGER
+#export PAGER=vimpager
+#alias less=$PAGER
+#alias zless=$PAGER

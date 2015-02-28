@@ -44,7 +44,7 @@ alias g++11.release="g++ $CXX_FLAGS_RELEASE -std=c++11"
 alias g++11.debug="g++ $CXX_FLAGS_DEBUG -std=c++11"
 
 # clang++ aliases
-alias clang++="/usr/bin/clang++ $CXX_FLAGS"
+alias clang++="clang++ $CXX_FLAGS"
 alias clang++.release="clang++ $CXX_FLAGS_RELEASE"
 alias clang++.debug="clang++ $CXX_FLAGS $CXX_FLAGS_DEBUG"
 alias clang++11="clang++ $CXX_FLAGS -std=c++11"

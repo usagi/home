@@ -9,4 +9,6 @@ Name=シェル
 Parent=FALLBACK/
 
 [Scrolling]
+HistoryMode=1
+HistorySize=1600
 ScrollBarPosition=2
