@@ -1,3 +1,6 @@
+# astyle
+*.orig
+
 # Compiled Object files
 *.slo
 *.lo
