@@ -305,20 +305,20 @@ let g:quickrun_config['html/firefox']  = { 'command': 'firefox' }
 let g:quickrun_config['cpp'] = { 'type' : 'cpp/clang++' }
 let g:quickrun_config['cpp/clang++'] =
   \ { 'command' : 'clang++'
-  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread -lglog -lgflags'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread -lglog -lgflags -ldl'
   \ }
 let g:quickrun_config['cpp/g++'] =
   \ { 'command' : 'clang++'
-  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread -lglog -lgflags'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread -lglog -lgflag -ldls'
   \ }
 let g:quickrun_config['cpp/em++'] = { 'type' : 'cpp/em++/js' }
 let g:quickrun_config['cpp/em++/js'] =
   \ { 'command' : 'em++'
-  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -glog -lglags -I/home/usagi/opt/emscripten_home/include'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -glog -lglags -ldl -I/home/usagi/opt/emscripten_home/include'
   \ }
 let g:quickrun_config['cpp/em++/html'] =
   \ { 'command' : 'em++'
-  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -glog -glflags -I/home/usagi/opt/emscripten_home/include'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -glog -glflags -ldl -I/home/usagi/opt/emscripten_home/include'
   \ }
 
 let g:quickrun_config['*'] = { 'split': '' }
