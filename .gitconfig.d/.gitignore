@@ -79,7 +79,7 @@ build.*/
 .kateproject.d/
 
 # kdevelop
-_custom.kdev4
+*.kdev4
 .kdev4/
 .kdev_*
 
