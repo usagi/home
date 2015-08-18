@@ -1,19 +1,47 @@
 [user]
-	email = usagi@WonderRabbitProject.net
-	name = Usagi Ito
+  email = usagi@WonderRabbitProject.net
+  name = Usagi Ito
 [push]
-	default = simple
+  default = simple
 [alias]
   submodule-update-init-recursive = !git submodule update --init --recursive
   push-current-branch = !git push origin `git rev-parse --abbrev-ref HEAD`
-	merge-no-ff = merge --no-ff
+  pull-current-branch = !git pull origin `git rev-parse --abbrev-ref HEAD`
+  merge-no-ff = merge --no-ff
+  astyle = !astyle \
+    --style=break \
+    --indent=spaces=2 \
+    --indent-switches \
+    --indent-namespaces \
+    --indent-preproc-block \
+    --indent-preproc-define \
+    --indent-col1-comments \
+    --break-blocks \
+    --pad-oper \
+    --pad-paren \
+    --delete-empty-lines \
+    --fill-empty-lines \
+    --align-pointer=type \
+    --align-reference=type \
+    --remove-brackets \
+    --keep-one-line-blocks \
+    --keep-one-line-statements \
+    --convert-tabs \
+    --remove-comment-prefix \
+    --max-code-length=100 \
+    --mode=c \
+    --lineend=linux \
+    --suffix=none \
+    --options=none \
+    `git ls-files | awk '{if ($1 !~/^submodule\\// && $1 ~/\\.(cxx|hxx|inl)$/) print}'`
+  commit-with-astyle = !git astyle && git commit
 [color]
-	ui = true
+  ui = true
 [merge]
-	tool = meld
+  tool = meld
 [core]
-	editor = vim --noplugin -Z
-	excludesfile = ~/.gitconfig.d/.gitignore
-	quotepath = false
+  editor = vim --noplugin -Z
+  excludesfile = ~/.gitconfig.d/.gitignore
+  quotepath = false
 [gui]
-	spellingdictionary = none
+  spellingdictionary = none

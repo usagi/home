@@ -2,6 +2,7 @@ style=break
 indent=spaces=2
 indent-switches
 indent-namespaces
+indent-preproc-block
 indent-preproc-define
 indent-col1-comments
 break-blocks
