@@ -1,0 +1,20 @@
+#!/bin/sh
+
+apt-get.update.once-everyday
+sudo apt-get build-dep ninja-build -y
+sudo apt-get install -y\
+  git
+
+cd $HOME/repos
+if [ -d ninja ]; then
+  cd ninja
+  git pull
+else
+  git clone git@github.com:martine/ninja.git
+  cd ninja
+fi
+
+./bootstrap.py
+
+install -sv ninja $HOME/bin/ninja
+

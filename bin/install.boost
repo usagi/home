@@ -1,0 +1,81 @@
+#!/bin/sh
+
+apt-get.update.once-everyday
+sudo apt-get build-dep libboost-all-dev -y
+sudo apt-get install -y\
+  git \
+  build-essential \
+  autotools-dev \
+  g++ \
+  python-dev \
+  libicu-dev \
+  libbz2-dev \
+  mpi-default-dev \
+  libopenmpi-dev \
+  libmpich2-dev \
+  clang-3.5 \
+  llvm-3.5-dev \
+  libc++-dev
+
+cd $HOME/repos
+if [ -d boost ]; then
+  cd boost
+  git fetch
+  git checkout `git tag | grep -e "^boost-[0-9]\+.[0-9]\+.[0-9]\+$" | tail -n1`
+  git pull
+  git submodule update --init --recursive
+else
+  git clone --recursive git@github.com:boostorg/boost.git
+  cd boost
+  git checkout `git tag | grep -e "^boost-[0-9]\+.[0-9]\+.[0-9]\+$" | tail -n1`
+fi
+
+if [ -z "${ADDRESS_MODEL+x}" ]; then ADDRESS_MODEL='address-model=64'; fi;
+if [ -z "${ARCHITECTURE+x}"  ]; then ARCHITECTURE='architecture=x86'; fi;
+
+if [ -z "${WITH_TOOLSET+x}" ]; then
+  WITH_TOOLSET='--with-toolset=clang'
+  TOOLSET='clang'
+fi
+
+user_configFile=`find $PWD -name user-config.jam`
+echo "using mpi ;" >> $user_configFile
+cp $user_configFile ~
+
+./bootstrap.sh \
+  --prefix=$HOME \
+  $WITH_TOOLSET \
+  --with-libraries=all
+
+./b2 headers
+
+./b2 \
+  --prefix=$HOME \
+  $TOOLSET \
+  cxxflags='-std=c++14 -stdlib=libc++' \
+  --build-type=complete \
+  --layout=tagged \
+  -j$(grep -c ^processor /proc/cpuinfo) \
+  -a \
+  -link=static,shared \
+  runtime-link=shared \
+  threading=multi \
+  variant=release \
+  $ADDRESS_MODEL \
+  $ARCHITECTURE \
+  instruction-set=native
+  install
+
+cd $HOME/lib
+if [ ! -f libboost_thread.a ]; then
+  if [ -f libboost_thread-mt.a ]; then
+    ln -s libboost_thread-mt.a libboost_thread.a
+  fi
+fi
+
+if [ ! -f libboost_thread.so ]; then
+  if [ -f libboost_thread-mt.so ]; then
+    ln -s libboost_thread-mt.so libboost_thread.so
+  fi
+fi
+

@@ -1,3 +1,6 @@
+# astyle
+*.orig
+
 # Compiled Object files
 *.slo
 *.lo
@@ -76,7 +79,7 @@ build.*/
 .kateproject.d/
 
 # kdevelop
-_custom.kdev4
+*.kdev4
 .kdev4/
 .kdev_*
 

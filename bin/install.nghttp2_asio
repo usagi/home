@@ -1,0 +1,35 @@
+#!/bin/sh
+
+install.spdylay
+
+apt-get.update.once-everyday
+sudo apt-get install -y\
+  git \
+  build-essential \
+  autotools-dev \
+  g++ \
+  libxml2-dev \
+  libevent-dev \
+  libcunit1-dev \
+  libjansson-dev \
+  libjemalloc-dev
+
+cd $HOME/repos
+if [ -d nghttp2 ]; then
+  cd nghttp2
+  git pull
+else
+  git clone --recursive git@github.com:tatsuhiro-t/nghttp2.git
+  cd nghttp2
+fi
+
+./configure \
+  --prefix=$HOME \
+  --enable-asio-lib
+
+make \
+  -j$(grep -c ^processor /proc/cpuinfo)
+
+make \
+  install
+
