@@ -1,3 +1,3 @@
-export PAGER=vimpager
+export PAGER=less
 alias less=$PAGER
 alias zless=$PAGER
