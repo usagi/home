@@ -24,7 +24,7 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 
 NeoBundle 'tomasr/molokai'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 
@@ -32,7 +32,7 @@ NeoBundle 'airblade/vim-gitgutter'
 "NeoBundle 'osyo-manga/vim-reunions'
 "NeoBundle 'osyo-manga/vim-marching'
 
-NeoBundle 'Valloric/YouCompleteMe'
+"NeoBundle 'Valloric/YouCompleteMe'
 
 "NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
@@ -203,13 +203,14 @@ highlight NonText ctermfg=8 guifg=gray
 highlight SpecialKey ctermfg=8 guifg=gray
 
 set undofile
+set undodir=~/.vim/tmp
 
 set showmatch
 set laststatus=2
 
 set shellslash
 set clipboard=unnamed,unnamedplus
-set iminsert=2
+"set iminsert=2
 
 set wildmenu wildmode=list:longest,full
 set history=8192
