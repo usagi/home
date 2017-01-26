@@ -1,29 +1,20 @@
-if has('vim_starting')
-  set nocompatible
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"NeoBundle Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
+" Required:
+set runtimepath^=~/.vim/bundle/neobundle.vim/
 
-if !filereadable(neobundle_readme)
-  echo 'Installing NeoBundle...'
-  echo ''
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
-endif
+" Required:
+call neobundle#begin(expand('/home/vagrant/.vim/bundle'))
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'tomasr/molokai'
+NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
@@ -61,11 +52,17 @@ NeoBundle 'tyru/vim-altercmd'
 
 NeoBundle 'tikhomirov/vim-glsl'
 
+NeoBundle 'rhysd/vim-gfm-syntax'
+
+NeoBundle 'sigidagi/vim-cmake-project'
+
+NeoBundle 'elzr/vim-json'
+
 call neobundle#end()
 
-NeoBundleCheck
-
 filetype plugin indent on
+
+NeoBundleCheck
 
 set tabpagemax=256
 
@@ -151,7 +148,7 @@ set shiftwidth=2
 set smarttab
 set expandtab
 
-let mapleader=','
+"let mapleader=','
 
 noremap <leader>h :<C-u>split<CR>
 noremap <leader>v :<C-u>vsplit<CR>
@@ -302,14 +299,14 @@ let g:quickrun_config['html/w3m']      = { 'command': 'w3m' }
 let g:quickrun_config['html/chromium'] = { 'command': 'chromium' }
 let g:quickrun_config['html/firefox']  = { 'command': 'firefox' }
 
-let g:quickrun_config['cpp'] = { 'type' : 'cpp/clang++' }
+let g:quickrun_config['cpp'] = { 'type' : 'cpp/g++' }
 let g:quickrun_config['cpp/clang++'] =
   \ { 'command' : 'clang++'
-  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread -lglog -lgflags -ldl'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread'
   \ }
 let g:quickrun_config['cpp/g++'] =
-  \ { 'command' : 'clang++'
-  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread -lglog -lgflag -ldls'
+  \ { 'command' : 'g++'
+  \ , 'cmdopt'  : '-std=c++14 -Wall -pedantic-errors -lpthread'
   \ }
 let g:quickrun_config['cpp/em++'] = { 'type' : 'cpp/em++/js' }
 let g:quickrun_config['cpp/em++/js'] =
@@ -323,7 +320,7 @@ let g:quickrun_config['cpp/em++/html'] =
 
 let g:quickrun_config['*'] = { 'split': '' }
 
-nmap <buffer> <leader>r :QuickRun<cr>
+nmap <buffer> rr :QuickRun<cr>
 
 function! s:cpp()
   setlocal path+=~/include,/usr/local/include,/usr/include
@@ -362,3 +359,6 @@ let g:DoxygenToolkit_licenseTag = "MIT"
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_show_diagnostics_ui = 0
+
+let g:vim_json_syntax_conceal = 0
+

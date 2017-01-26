@@ -1,2 +1,2 @@
 #alias g="egrep -nr"
-g(){ egrep -nr $1 | sort; }
+#g(){ egrep -nr $1 | sort; }
